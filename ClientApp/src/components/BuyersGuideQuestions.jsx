@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
-import { Home } from '../Home'
-const SkatingStyle = () => {
+import { Home } from './Home'
+import Question2 from './Question2'
+import Question3 from './Question3'
+
+export function BuyersGuideQuestions() {
   return (
     <>
       {/* <div className="homePageContainer"> */}
@@ -25,22 +28,16 @@ const SkatingStyle = () => {
         </button>
       </div>
       <div className="SkatingStyle">
-        <h1>Skating Style</h1>
-        <p>
-          Some skates specialize to be a certain type, while others are more
-          versatile for use across different styles. Inline Warehouse has two
-          pages dedicated to the different disciplines of skating. On the IW
-          Fitness page, you will see Recreational, Cross-Training and Speed
-          skates predominantly featured; whereas on the IW Street page, you will
-          be immersed in the adrenaline-filled world of Aggressive, Urban and
-          All-Terrain skating.
-        </p>{' '}
+        <h1>What is your skill level?</h1>
+        <a href="/Question2">Beginner</a>
+        <a href="/Question2">Intermediate</a>
+        <a href="/Question2">Advanced</a>
       </div>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/Question2" component={Question2} />
+        <Route exact path="/Question3" component={Question3} />
       </Switch>
     </>
   )
 }
-
-export default SkatingStyle

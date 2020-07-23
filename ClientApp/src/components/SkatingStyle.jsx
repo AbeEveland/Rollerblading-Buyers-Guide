@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
-import { Home } from '../Home'
-const BuyersGuideQuestions = () => {
+import { Home } from './Home'
+const SkatingStyle = () => {
   return (
     <>
       {/* <div className="homePageContainer"> */}
@@ -43,4 +43,4 @@ const BuyersGuideQuestions = () => {
   )
 }
 
-export default BuyersGuideQuestions
+export default SkatingStyle

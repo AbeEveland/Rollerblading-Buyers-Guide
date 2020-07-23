@@ -19,9 +19,7 @@ namespace Rollerblading_Buyers_Guide
     {
         public static async Task Main(string[] args)
         {
-            var host = CreateWebHostBuilder(args).
-               UseUrls("http://0.0.0.0:5000/;https://0.0.0.0:5001").
-               Build();
+            var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {

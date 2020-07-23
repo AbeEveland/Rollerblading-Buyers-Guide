@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
-import { Home } from '../Home'
-import BuyersGuideQuestions from '../_template/BuyersGuideQuestions'
+import { Home } from './Home'
+import { BuyersGuideQuestions } from './BuyersGuideQuestions'
 
 const BuyersGuide = () => {
   return (
@@ -14,7 +14,6 @@ const BuyersGuide = () => {
       width="30px"
     /> */}
       <div className="homePageHeader">
-        <a href="/">Home</a>
         <h1 className="headinghH1">ROLLERBLADE WAREHOUSE</h1>
 
         <button className="homePageAccountButtons">

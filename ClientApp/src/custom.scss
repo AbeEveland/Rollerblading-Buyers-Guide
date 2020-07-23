@@ -1,4 +1,6 @@
 /* Provide sufficient contrast against white background */
+@import '~bootstrap/scss/bootstrap.scss';
+
 a {
   color: #0366d6;
 }
@@ -7,7 +9,8 @@ code {
   color: #e01a76;
 }
 body {
-  background: rgb(43, 43, 43);
+  background: rgb(52, 58, 64);
+  background-color: rgb(52, 58, 64);
 }
 
 .btn-primary {
@@ -99,46 +102,62 @@ body {
 .thingsToConsider {
   //display: grid;
   //padding-top: 200px;
+  color: whitesmoke;
 
   justify-content: center;
   margin-top: 70px;
-  border-radius: 4px;
-  background: rgb(255, 254, 254);
+  border-radius: 10px;
+  background: whitesmoke;
   // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
-  width: 100vw;
+  width: 30vw;
+  font-family: 'Times New Roman', Times, serif;
+
+  padding: 10px;
+  justify-self: center;
+  margin: auto;
+  margin-top: 60px;
 }
 .thingsToConsider h1 {
-  font-size: 16px;
   //padding: 5px;
   //box-shadow: 1px 1px 5px rgb(133, 133, 134);
   //border-bottom: 0.5px solid rgb(192, 187, 187);
   text-align: center;
   //padding-top: 20px;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  font-size: 20px;
-  //border: 1px solid blue;
 
-  grid-column-start: 1;
-  grid-column-end: 1;
+  //font-size: 28px;
+  //border: 1px solid blue;
+  font-family: 'Times New Roman', Times, serif;
+  color: whitesmoke;
+
   padding-bottom: 20px;
+  padding-top: 20px;
+  color: whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom: 0.3px solid rgb(52, 58, 64);
+  border-radius: 10px;
+  padding: 1px;
+  font-size: 20px;
+  width: 50vw;
+  text-align: center;
+  margin: auto;
+  color: whitesmoke;
 }
 .thingsToConsider p {
   //border: 1px solid rgb(18, 158, 18);
   text-align: center;
+  color: whitesmoke;
 
-  padding: 10px;
-  padding-bottom: 5px;
+  padding: 30px 10px;
   //border-bottom: 0.5px solid rgb(192, 187, 187);
 }
 .thingsToConsider li {
   list-style: none;
-  color: rgb(43, 43, 43);
+  color: whitesmoke;
 }
 .thingsToConsider a {
   list-style: none;
-  color: rgb(43, 43, 43);
+  color: whitesmoke;
   border-bottom: 1px solid rgb(43, 43, 43);
 }
 
@@ -242,6 +261,9 @@ div :nth-child(10) {
   // grid-row-start: 2;
   color: rgb(43, 43, 43);
 }
+.SkatingStyle a {
+  color: rgb(43, 43, 43);
+}
 .wheels {
   //display: grid;
   //padding-top: 200px;
@@ -315,4 +337,226 @@ div :nth-child(10) {
   padding-bottom: 50px;
   // grid-row-start: 2;
   color: rgb(43, 43, 43);
+}
+.questionone {
+  justify-content: center;
+  margin-top: 70px;
+  border-radius: 4px;
+  background: rgb(253, 253, 253);
+  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  text-align: center;
+  width: 100vw;
+  color: rgb(43, 43, 43);
+  justify-items: center;
+  display: grid;
+  padding-top: 50px;
+}
+.questionone a {
+  color: rgb(43, 43, 43);
+}
+.card {
+}
+.NaveBarH1 {
+  color: whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom: 0.3px solid white;
+  border-radius: 10px;
+  border-bottom: 0.3px solid white;
+  padding: 1px;
+  font-size: 20px;
+  width: 50vw;
+  text-align: center;
+}
+.navbar {
+  width: 100%;
+  color: red;
+  justify-content: space-between;
+}
+.navbarbutton {
+  display: flex;
+  width: 40vw;
+  margin: auto;
+  margin-right: 0;
+}
+nav img {
+  position: relative;
+  left: 10px;
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+}
+.navbar-toggler {
+  border-radius: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  position: relative;
+  right: 10px;
+  display: flex;
+}
+.navbar-toggler {
+  border-radius: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  position: relative;
+  right: 10px;
+  display: flex;
+}
+
+.a {
+  border-radius: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  position: relative;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  margin: auto;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-radius: 10px;
+}
+.searchbar {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin: auto;
+}
+.thingsToConsider h1 {
+  //padding: 5px;
+  //box-shadow: 1px 1px 5px rgb(133, 133, 134);
+  //border-bottom: 0.5px solid rgb(192, 187, 187);
+  text-align: center;
+  //padding-top: 20px;
+
+  //font-size: 28px;
+  //border: 1px solid blue;
+  font-family: 'Times New Roman', Times, serif;
+  color: whitesmoke;
+
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom: 0.3px solid white;
+  border-radius: 7px;
+  font-size: 20px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: whitesmoke;
+  font-size: 25px;
+}
+.userfeatures {
+  margin: auto;
+  float: left;
+  color: whitesmoke;
+
+  justify-content: center;
+  border-radius: 4px;
+  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+
+  justify-self: center;
+  margin: auto;
+  margin-left: 0px;
+}
+.userfeatures li {
+  color: whitesmoke;
+  list-style: none;
+  font-size: 20px;
+  margin-top: 90px;
+  margin-left: 0px;
+}
+.userfeatures a {
+  color: whitesmoke;
+  list-style: none;
+  border-bottom: 0.3px solid whitesmoke;
+  border-top: 0.3px solid whitesmoke;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 0px;
+  position: relative;
+  right: 50px;
+}
+.rollerbladelogo {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin: auto;
+  position: relative;
+  bottom: 50px;
+  right: 20px;
+  border-radius: 5px;
+}
+.thingsToConsider {
+  color: whitesmoke;
+  background-color: none;
+  background: none;
+  border: 0.3px solid whitesmoke;
+}
+h3 {
+  border-bottom: 0.3px solid rgb(52, 58, 64);
+  border-radius: 5px;
+}
+.showrollerblades {
+  //display: grid;
+  //padding-top: 200px;
+  color: rgb(52, 58, 64);
+
+  justify-content: center;
+  margin-top: 70px;
+  border-radius: 10px;
+  background: whitesmoke;
+  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  text-align: center;
+  width: 30vw;
+  font-family: 'Times New Roman', Times, serif;
+
+  padding: 40px;
+  justify-self: center;
+  margin: auto;
+  margin-top: 100px;
+  border-bottom: rgb(52, 58, 64);
+}
+.showrollerblades li {
+  list-style: none;
+}
+.thingsToConsidersearch {
+  //padding: 5px;
+  //box-shadow: 1px 1px 5px rgb(133, 133, 134);
+  //border-bottom: 0.5px solid rgb(192, 187, 187);
+  text-align: center;
+  //padding-top: 20px;
+
+  //font-size: 28px;
+  //border: 1px solid blue;
+  font-family: 'Times New Roman', Times, serif;
+  color: whitesmoke;
+
+  padding-bottom: 10px;
+  padding-top: 20px;
+  color: whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom: 0.3px solid rgb(52, 58, 64);
+  border-radius: 10px;
+  font-size: 20px;
+  width: 50vw;
+  text-align: center;
+  margin: auto;
+  color: whitesmoke;
+}
+@media screen and (min-width: 680px) {
+  body {
+  }
 }

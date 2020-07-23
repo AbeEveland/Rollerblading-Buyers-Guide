@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
-import { Home } from '../Home'
+import { Home } from './Home'
 const Wheels = () => {
   return (
     <>
