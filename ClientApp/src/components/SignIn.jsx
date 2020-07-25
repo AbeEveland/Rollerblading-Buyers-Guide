@@ -1,41 +1,43 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Route, Switch } from 'react-router'
+import { recordAuthentication } from './auth'
 
 import { Home } from './Home'
 
 export function SignIn() {
   const history = useHistory()
   const [errorMessage, setErrorMessage] = useState()
-  const [newUser, setNewUser] = useState({
+  const [loginUser, setLoginUser] = useState({
     email: '',
     password: '',
   })
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
-    const updatedUser = { ...newUser, [fieldName]: value }
-    setNewUser(updatedUser)
+    const updatedUser = { ...loginUser, [fieldName]: value }
+    setLoginUser(updatedUser)
   }
   const handleFormSubmit = event => {
     event.preventDefault()
     fetch('/api/Sessions', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(loginUser),
     })
       .then(response => response.json())
       .then(apiResponse => {
         if (apiResponse.status === 400) {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
-          history.push('/')
+          recordAuthentication(apiResponse)
+          window.location = '/'
         }
       })
   }
   return (
     <div className="card">
-      <div className="card-header">Sign In</div>
+      <div className="card-header">Login</div>
       <div className="card-body">
         {errorMessage && (
           <div className="alert alert-danger" role="alert">
@@ -49,7 +51,7 @@ export function SignIn() {
               type="email"
               className="form-control"
               id="email"
-              value={newUser.email}
+              value={loginUser.email}
               onChange={handleFieldChange}
             />
           </div>
@@ -59,7 +61,7 @@ export function SignIn() {
               type="password"
               className="form-control"
               id="password"
-              value={newUser.password}
+              value={loginUser.password}
               onChange={handleFieldChange}
             />
           </div>

@@ -16,6 +16,7 @@ namespace Rollerblading_Buyers_Guide.Models
         private static bool LOG_SQL_STATEMENTS_IN_DEVELOPMENT = false;
 
         public DbSet<Rollerblades> Rollerblades { get; set; }
+
         public DbSet<User> Users { get; set; }
 
 

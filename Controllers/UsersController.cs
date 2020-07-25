@@ -70,6 +70,54 @@ namespace Rollerblading_Buyers_Guide.Controllers
             return NoContent();
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutUsers(int id, User user)
+        {
+            // If the ID in the URL does not match the ID in the supplied request body, return a bad request
+            if (id != user.Id)
+            {
+                return BadRequest();
+            }
+
+            // Tell the database to consider everything in rollerblades to be _updated_ values. When
+            // the save happens the database will _replace_ the values in the database with the ones from rollerblades
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                // Try to save these changes.
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                // Ooops, looks like there was an error, so check to see if the record we were
+                // updating no longer exists.
+                if (!UserExists(id))
+                {
+                    // If the record we tried to update was already deleted by someone else,
+                    // return a `404` not found
+                    return NotFound();
+                }
+                else
+                {
+                    // Otherwise throw the error back, which will cause the request to fail
+                    // and generate an error to the client.
+                    throw;
+                }
+            }
+
+            // return NoContent to indicate the update was done. Alternatively you can use the
+            // following to send back a copy of the updated data.
+            //
+            // return Ok(rollerblades)
+            //
+            return NoContent();
+        }
+        private bool UserExists(int id)
+        {
+            return _context.Users.Any(users => users.Id == id);
+        }
+
 
 
     }

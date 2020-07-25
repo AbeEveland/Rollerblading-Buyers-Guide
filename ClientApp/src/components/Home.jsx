@@ -15,6 +15,7 @@ import { BuyersGuideQuestions } from './BuyersGuideQuestions'
 import { ShowRollerblades } from './ShowRollerblades'
 import { ShowUsers } from './ShowUsers'
 import { SkateSuggestion } from './SkateSuggestion'
+import { AlterUser } from './AlterUser'
 
 export function Home() {
   return (
@@ -57,10 +58,18 @@ export function Home() {
               SkateSuggestion
             </a>
           </li>
+          <li>
+            <a className=" " href="/AlterUser">
+              {' '}
+              AlterUser
+            </a>
+          </li>
         </ol>
       </div>
       <div className="thingsToConsider">
-        <h1 className="NaveBarH1">Rollerblade Buying Guide</h1>
+        <h1 className="NaveBarH1">
+          Things to consider when buying rollerblades
+        </h1>
         <p>
           With a wide range of inline skates built for varying types of skating,
           it can be difficult to find the skate that is best suited for you.
@@ -101,12 +110,12 @@ export function Home() {
             Frame
           </a>
         </li>
-        <li>
+        {/* <li>
           <a className=" " href="/BuyersGuide">
             {' '}
             BuyersGuide
           </a>
-        </li>
+        </li> */}
       </div>
       {/* <div>
         <img
@@ -131,6 +140,7 @@ export function Home() {
         <Route exact path="/ShowRollerblades" component={ShowRollerblades} />
         <Route exact path="/ShowUsers" component={ShowUsers} />
         <Route exact path="/SkateSuggestion" component={SkateSuggestion} />
+        <Route exact path="/AlterUser" component={AlterUser} />
 
         <Route
           exact

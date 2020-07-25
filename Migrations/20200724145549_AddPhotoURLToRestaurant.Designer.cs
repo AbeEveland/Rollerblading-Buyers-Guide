@@ -9,8 +9,8 @@ using Rollerblading_Buyers_Guide.Models;
 namespace RollerbladingBuyersGuide.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200721211433_AddRollerbladesRequiredFields")]
-    partial class AddRollerbladesRequiredFields
+    [Migration("20200724145549_AddPhotoURLToRestaurant")]
+    partial class AddPhotoURLToRestaurant
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,14 +28,28 @@ namespace RollerbladingBuyersGuide.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Fit")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MANEUVERABILITY")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhotoURL")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Skill")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Speed")
                         .HasColumnType("text");
 
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -51,8 +65,17 @@ namespace RollerbladingBuyersGuide.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<string>("Boot")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
                     b.Property<string>("Email")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Environment")
                         .HasColumnType("text");
 
                     b.Property<string>("FullName")
@@ -60,6 +83,18 @@ namespace RollerbladingBuyersGuide.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("HashedPassword")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Priority")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Skill")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Suggestion")
                         .HasColumnType("text");
 
                     b.HasKey("Id");

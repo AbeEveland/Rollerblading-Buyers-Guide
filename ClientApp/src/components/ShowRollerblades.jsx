@@ -1,94 +1,106 @@
 import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-// import format from 'date-fns/format'
 import { authHeader } from './auth'
 
-const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
-
 export function ShowRollerblades() {
-  const params = useParams()
-  const id = parseInt(params.id)
+  // fetch('/api/Rollerblades', {
+  //   method: 'GET',
+  //   headers: { 'content-type': 'application/json', ...authHeader() },
+  //   body: JSON.stringify(newReview),
+  // })
 
   const [rollerblade, setRollerblade] = useState({
-    userName: '',
     title: '',
-    description: '',
-    photoURL: '',
+    // description: '',
+    // address: '',
+    // telephone: '',
+    // reviews: [],
   })
 
-  const [newReview, setNewReview] = useState({
-    body: '',
-    summary: '',
-    rollerbladeId: id,
-  })
+  const params = useParams()
+  const id = params.id
 
-  const fetchRollerblades = async () => {
-    const response = await fetch(`/api/Rollerblades`)
+  const fetchrollerblades = async () => {
+    const response = await fetch(`api/Rollerblades`)
     const apiData = await response.json()
 
     setRollerblade(apiData)
   }
 
   useState(() => {
-    fetchRollerblades()
+    fetchrollerblades()
   }, [id])
-
-  const handleNewReviewFieldChange = event => {
-    const id = event.target.id
-    const value = event.target.value
-
-    setNewReview({ ...newReview, [id]: value })
-  }
-
-  const handleNewReviewSubmit = event => {
-    event.preventDefault()
-
-    fetch('/api/Reviews', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', ...authHeader() },
-      body: JSON.stringify(newReview),
-    })
-      .then(response => {
-        if (response.status === 401) {
-          return {}
-        } else {
-          return response.json()
-        }
-      })
-      .then(apiResponse => {
-        fetchRollerblades()
-        setNewReview({ ...newReview, body: '', summary: '' })
-      })
-  }
   return (
     <div className="taco-listing">
-      {/* <div className="media mb-5">
-        {rollerblade.photoURL ? (
-          <img
-            alt="rollerblade Photo"
-            width={200}
-            className="pr-3"
-            src={rollerblade.photoURL}
-          />
-        ) : (
-          <span className="pr-3 display-2" role="img" aria-label="taco">
-            🌮
-          </span>
-        )}
-      </div> */}
-      <>
-        {rollerblade.length > 0 && (
-          <div className="showrollerblades">
-            <h3>Roller Blades</h3>
-            {rollerblade.map(rollerblade => (
-              <li key={rollerblade.id}>
-                <p className="">{rollerblade.title}</p>
-              </li>
-            ))}
+      <div className="media mb-5">
+        <div className="media-body">
+          <div className="showrollerblades"></div>
+          {/* <h1 className="mt-0">{rollerblade.title}</h1> */}
+          {/* {restaurant.description} */}
+          {/* <address className="mt-3">
+            {/* <Link to="maps.google.com">{restaurant.address}</Link> */}
+          {/* </address> */}
+          {/* <Link to={`tel:${restaurant.telephone}`}>{restaurant.telephone}</Link> */}{' '}
+          */}
+        </div>
+      </div>
+
+      {/* <div className="row mb-5">
+        {rollerblade.reviews.length > 0 && (
+          <div className="col-12">
+            <h3>Reviews</h3>
+            <ul className="timeline">
+              {rollerblade.reviews.map(review => (
+                <li key={review.id}>
+                  <p className="mb-2">
+                    {review.summary}
+                    <span className="float-right">{review.createdAt}</span>
+                  </p>
+                  <p>{review.body}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
-      </>
-      //{' '}
+      </div> */}
+
+      {/* <div className="card">
+        <div className="card-header">Enter your own review</div>
+        <div className="card-body">
+          <form>
+            <div className="form-group">
+              <label htmlFor="summary">Summary</label>
+              <input
+                type="text"
+                className="form-control"
+                id="summary"
+                aria-describedby="summaryHelp"
+              />
+              <small id="summaryHelp" className="form-text text-muted">
+                Enter a brief summary of your review. Example:{' '}
+                <strong>Great food, good prices.</strong>
+              </small>
+            </div>
+            <div className="form-group">
+              <label for="review">Review</label>
+              <textarea type="text" className="form-control" id="review" />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div> */}
+      {rollerblade.length > 0 && (
+        <div className="showrollerblades">
+          <h3>Roller Blades</h3>
+          {rollerblade.map(rollerblade => (
+            <li key={rollerblade.id}>
+              <p className="">{rollerblade.title}</p>
+            </li>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

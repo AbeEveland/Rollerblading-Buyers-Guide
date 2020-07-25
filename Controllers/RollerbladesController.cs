@@ -5,6 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Rollerblading_Buyers_Guide.Models;
 using rollerblading_buyers_guide.Models;
 
@@ -34,7 +41,7 @@ namespace Rollerblading_Buyers_Guide.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Rollerblades>>> GetRollerblades(string filter)
         {
-            // Uses the database context in `_context` to request all of the Restaurants and
+            // Uses the database context in `_context` to request all of the Rollerblades and
             // return them as a JSON array.
 
             if (filter == null)
@@ -43,7 +50,7 @@ namespace Rollerblading_Buyers_Guide.Controllers
             }
             else
             {
-                return await _context.Rollerblades.Where(rollerblade => rollerblade.Title.Contains(filter)).ToListAsync();
+                return await _context.Rollerblades.Where(restaurant => restaurant.Skill.Contains(filter)).ToListAsync();
             }
         }
         // [HttpGet]

@@ -21,6 +21,8 @@ import Question5 from './components/Question5'
 import RecommendedSkates from './components/RecomendedSkates'
 import { ShowRollerblades } from './components/ShowRollerblades'
 import { ShowUsers } from './components/ShowUsers'
+import { AlterUser } from './components/AlterUser'
+
 import { SkateSuggestion } from './components/SkateSuggestion'
 
 export function App() {
@@ -59,6 +61,8 @@ export function App() {
           <Route exact path="/Question3" component={Question3} />
           <Route exact path="/Question4" component={Question4} />
           <Route exact path="/Question5" component={Question5} />
+          <Route exact path="/AlterUser" component={AlterUser} />
+
           <Route
             exact
             path="/RecommendedSkates"

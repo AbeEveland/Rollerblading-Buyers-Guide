@@ -62,20 +62,26 @@ export function NavBar(props) {
             </li>
           </ul>
           <Route exact path="/">
-            <form
-              id="cercator"
-              action="https://www.rollerblade.com/usa/search-results/"
-              className="search-form thingsToConsidersearch"
-              method="post"
-            >
+            <form className="form-inline mr-2 my-2 my-lg-0">
+              {isLoggedIn() && (
+                <Link className="btn btn-success mr-2" to="/AddRollerblades">
+                  + Add
+                </Link>
+              )}
               <input
-                className="ui-searchinput"
-                type="text"
-                name="search"
-                id="cercainp"
-                placeholder="Start typing what you're looking for"
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={filterText}
+                onChange={event => setFilterText(event.target.value)}
               />
-              <input type="hidden" name="solonome" id="solo_nome" value="N" />
+              <span
+                className="btn btn-outline-success my-2 my-sm-0"
+                onClick={handleClickSearch}
+              >
+                Search
+              </span>
             </form>
             {/* <span
               className="navbar-toggler  bg-dark"
