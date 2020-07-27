@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Route } from 'react-router'
 import { isLoggedIn, logout } from './auth'
+import { getUser } from './auth'
+import { UserFeatures } from './UserFeatures'
 
 export function NavBar(props) {
+  const [activeFilter, setActiveFilter] = useState('')
+  const [rollerblades, setRollerblades] = useState([])
+  const [users, setUsers] = useState([])
   const [filterText, setFilterText] = useState('')
   const [navbarIsOpen, setNavbarIsOpen] = useState(false)
 
@@ -18,85 +23,143 @@ export function NavBar(props) {
     window.location = '/'
   }
 
-  return (
-    <nav className="navbar navbar-dark bg-dark ">
-      <Link className="navbar-brand" to="#">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR1FRf8gAQ6cJsz2nIkihN3WR42yU7moD4Cqg&usqp=CAU"
-          alt=""
-          width="60px"
-        />{' '}
-      </Link>
-      <h1 className="NaveBarH1">ROLLERBLADE WAREHOUSE</h1>
+  const user = getUser()
+  console.log(user)
 
-      <button
-        className="navbar-toggler bg-dark"
+  return (
+    <>
+      <nav
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+        className="navbar navbar-dark  "
+      >
+        <Link className="navbar-brand" to="#">
+          <img
+            src="https://www.powerslide.com/bilder/intern/shoplogo/Powerslide-Logo.jpg"
+            alt=""
+            width="0px"
+          />{' '}
+        </Link>
+        <a href=""></a>
+        <div className="zzzz">
+          <p className="zzz">Welcome</p>
+          <p className="zzz">
+            {isLoggedIn(user) && (
+              <Link to="/UserFeatures" className="zzz">
+                {user.fullName}
+              </Link>
+            )}
+          </p>
+        </div>
+        <form
+          id="cercator"
+          action="https://www.rollerblade.com/usa/search-results/"
+          className="search-form"
+          method="post"
+        >
+          <input
+            className="ShopSearchBar"
+            type="text"
+            name="search"
+            id="cercainp"
+            placeholder="Product Search"
+          />
+          <input type="hidden" name="solonome" id="solo_nome" value="N" />
+        </form>
+        {/* <h1 className="NaveBarH1">ROLLERBLADE WAREHOUSE</h1> */}
+        <div className="navbuttons">
+          {isLoggedIn() || (
+            <Link className="navbuttons" to="/SignIn">
+              Sign in
+            </Link>
+          )}
+          {isLoggedIn() || (
+            <Link className="navbuttons" to="/SignUp">
+              Sign up
+            </Link>
+          )}
+          <Link className="navbuttons" to="/">
+            Home
+          </Link>
+          {isLoggedIn() && (
+            <Link className="navbuttons" onClick={handleLogout} to="/">
+              {' '}
+              Sign Out
+            </Link>
+          )}
+        </div>
+        {/* <button
+        className="navbar-toggler menu"
         type="button"
         aria-label="Toggle navigation"
         onClick={() => setNavbarIsOpen(!navbarIsOpen)}
       >
         <span className="navbar-toggler-icon"></span>
-      </button>
-      <div
+      </button> */}
+        {/* <div
         className={`collapse navbar-collapse ${navbarIsOpen ? 'show' : ''}`}
         id="navbarSupportedContent"
         width="100px"
       >
         {' '}
-        <div className="navbar-togglers b bg-dark ">
+        <div className="navbuttonsa">
+          <input
+            className="navbuttonsearch"
+            type="search"
+            placeholder="What are you looking for?"
+            aria-label="Search"
+            value={filterText}
+            onChange={event => setFilterText(event.target.value)}
+          />
+          <span
+            className="btn btn-outline-success my-2 my-sm-0"
+            onClick={handleClickSearch}
+          >
+            Search
+          </span>
           {isLoggedIn() || (
-            <Link className="navbar-toggler a bg-dark" to="/SignIn">
+            <Link className="navbuttons" to="/SignIn">
               Sign in
             </Link>
           )}
           {isLoggedIn() || (
-            <Link className="navbar-toggler a bg-dark" to="/SignUp">
+            <Link className="navbuttons" to="/SignUp">
               Sign up
             </Link>
           )}
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <Link className="navbar-toggler a bg-dark" to="/">
-                Home
-              </Link>
-            </li>
-          </ul>
-          <Route exact path="/">
-            <form className="form-inline mr-2 my-2 my-lg-0">
-              {isLoggedIn() && (
-                <Link className="btn btn-success mr-2" to="/AddRollerblades">
-                  + Add
-                </Link>
-              )}
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                value={filterText}
-                onChange={event => setFilterText(event.target.value)}
-              />
-              <span
-                className="btn btn-outline-success my-2 my-sm-0"
-                onClick={handleClickSearch}
-              >
-                Search
-              </span>
-            </form>
-            {/* <span
+          <Link className="navbuttons" to="/">
+            Home
+          </Link>
+          <Route exact path="/"> */}
+        {/* {isLoggedIn() && (
+            <Link className="btn btn-success mr-2" to="/AddRollerblades">
+            + Add
+            </Link>
+          )} */}
+        {/* <span
+        className="navbar-toggler a bg-dark my-2 my-sm-0"
+        onClick={handleClickSearch}
+      >
+        Search
+      </span> */}
+        {/* <span
               className="navbar-toggler  bg-dark"
               onClick={handleClickSearch}
-            >
+              >
               Search
             </span> */}
-          </Route>
-        </div>
-        {isLoggedIn() && (
-          <span className="btn btn-success" onClick={handleLogout}>
-            Sign out
-          </span>
-        )}
-      </div>
-    </nav>
+        {/* </Route> */}
+        {/* {isLoggedIn() && ( */}
+        {/* <Link className="navbuttons" onClick={handleLogout} to="/"> */}
+        {/* Sign Out */}
+        {/* </Link> */}
+        {/* )} */}
+        {/* </div> */}
+        {/* </div> */}
+      </nav>
+      {/* <switch>
+        <Route exact path="/UserFeatures" component={UserFeatures} />
+      </switch> */}
+    </>
   )
 }

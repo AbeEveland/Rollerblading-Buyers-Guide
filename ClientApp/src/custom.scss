@@ -1,6 +1,6 @@
 /* Provide sufficient contrast against white background */
-@import '~bootstrap/scss/bootstrap.scss';
 
+@import '~bootstrap/scss/bootstrap.scss';
 a {
   color: #0366d6;
 }
@@ -8,9 +8,10 @@ a {
 code {
   color: #e01a76;
 }
+
 body {
-  background: rgb(52, 58, 64);
-  background-color: rgb(52, 58, 64);
+  background: white;
+  background-color: white;
 }
 
 .btn-primary {
@@ -18,10 +19,10 @@ body {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
 .homePageHeader {
   display: flex;
   flex-direction: row;
-
   width: 100%;
   background: rgb(43, 43, 43);
   border-radius: 4px;
@@ -31,9 +32,9 @@ body {
   margin-bottom: 0;
   justify-content: center;
 }
+
 // .homePageContainer {
 //   display: grid;
-
 //   justify-content: space-evenly;
 //   margin: 0px 20px 20px 20px;
 //   //align-items: center;
@@ -49,44 +50,41 @@ body {
 .logo {
   grid-row-start: 1;
   grid-row-end: 1;
-
   grid-column-start: 1;
   grid-column-end: 1;
   margin-left: 15px;
   background: rgb(63, 62, 62);
 }
+
 .headinghH1 {
   font-size: 20px;
   color: rgb(255, 255, 255);
-
   border-radius: 10px;
   width: 100vw;
   font-family: Georgia, 'Times New Roman', Times, serif;
-
   justify-content: center;
   text-align: center;
   padding-top: 10px;
-  border-bottom: 0.3px solid white;
-  //border-bottom: 0.5px solid rgb(192, 187, 187);
+  border-bottom: 0.3px solid white; //border-bottom: 0.5px solid rgb(192, 187, 187);
 }
+
 .homePageAccountButton {
   border: none;
   background: none;
   grid-row-start: 1;
   grid-row-end: 1;
-
   grid-column-start: 3;
   grid-column-end: 3;
   height: 20px;
   border-radius: 50px;
   margin-right: 15px;
 }
+
 .homePageAccountButtons {
   border: none;
   background: none;
   grid-row-start: 1;
   grid-row-end: 1;
-
   grid-column-start: 3;
   grid-column-end: 3;
   height: 30px;
@@ -103,33 +101,28 @@ body {
   //display: grid;
   //padding-top: 200px;
   color: whitesmoke;
-
   justify-content: center;
   margin-top: 70px;
   border-radius: 10px;
-  background: whitesmoke;
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: whitesmoke; // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 30vw;
   font-family: 'Times New Roman', Times, serif;
-
   padding: 10px;
   justify-self: center;
   margin: auto;
   margin-top: 60px;
 }
+
 .thingsToConsider h1 {
   //padding: 5px;
   //box-shadow: 1px 1px 5px rgb(133, 133, 134);
   //border-bottom: 0.5px solid rgb(192, 187, 187);
-  text-align: center;
-  //padding-top: 20px;
-
+  text-align: center; //padding-top: 20px;
   //font-size: 28px;
   //border: 1px solid blue;
   font-family: 'Times New Roman', Times, serif;
   color: whitesmoke;
-
   padding-bottom: 20px;
   padding-top: 20px;
   color: whitesmoke;
@@ -143,18 +136,19 @@ body {
   margin: auto;
   color: whitesmoke;
 }
+
 .thingsToConsider p {
   //border: 1px solid rgb(18, 158, 18);
   text-align: center;
   color: whitesmoke;
-
-  padding: 30px 10px;
-  //border-bottom: 0.5px solid rgb(192, 187, 187);
+  padding: 30px 10px; //border-bottom: 0.5px solid rgb(192, 187, 187);
 }
+
 .thingsToConsider li {
   list-style: none;
   color: whitesmoke;
 }
+
 .thingsToConsider a {
   list-style: none;
   color: whitesmoke;
@@ -165,9 +159,11 @@ div :nth-child(10) {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+
 .skillLevel p {
   color: white;
 }
+
 .homePageHeader a {
   justify-content: center;
   text-align: center;
@@ -182,32 +178,34 @@ div :nth-child(10) {
 .skillLevel {
   //display: grid;
   //padding-top: 200px;
-
   justify-content: center;
   margin-top: 70px;
   border-radius: 4px;
-  background: rgb(253, 253, 253);
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: rgb(
+    253,
+    253,
+    253
+  ); // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 100vw;
   color: rgb(128, 128, 128);
   justify-items: center;
   display: grid;
 }
+
 .skillLevel p {
   color: rgb(63, 62, 62);
 }
 
 .skillLevel h1 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   font-weight: bold;
 }
+
 .skillLevel h2 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   //box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   width: 100%;
@@ -218,19 +216,22 @@ div :nth-child(10) {
   padding-top: 0px;
   justify-content: center;
 }
+
 .skillLevel p {
-  width: 80%;
-  // grid-row-start: 2;
+  width: 80%; // grid-row-start: 2;
 }
+
 .SkatingStyle {
   //display: grid;
   //padding-top: 200px;
-
   justify-content: center;
   margin-top: 70px;
   border-radius: 4px;
-  background: rgb(253, 253, 253);
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: rgb(
+    253,
+    253,
+    253
+  ); // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 100vw;
   color: rgb(128, 128, 128);
@@ -238,41 +239,45 @@ div :nth-child(10) {
   display: grid;
   padding-top: 50px;
 }
+
 .SkatingStyle h1 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   font-weight: bold;
 }
+
 .SkatingStyle h2 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   font-weight: bold;
   font-size: 18px;
   text-align: center;
 }
+
 .SkatingStyle p {
   width: 80%;
   padding-top: 50px;
-  padding-bottom: 50px;
-  // grid-row-start: 2;
+  padding-bottom: 50px; // grid-row-start: 2;
   color: rgb(43, 43, 43);
 }
+
 .SkatingStyle a {
   color: rgb(43, 43, 43);
 }
+
 .wheels {
   //display: grid;
   //padding-top: 200px;
-
   justify-content: center;
   margin-top: 70px;
   border-radius: 4px;
-  background: rgb(253, 253, 253);
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: rgb(
+    253,
+    253,
+    253
+  ); // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 100vw;
   color: rgb(128, 128, 128);
@@ -280,33 +285,37 @@ div :nth-child(10) {
   display: grid;
   padding-top: 50px;
 }
+
 .wheels p {
   width: 80%;
   padding-top: 0px;
-  padding-bottom: 0px;
-  // grid-row-start: 2;
+  padding-bottom: 0px; // grid-row-start: 2;
   color: rgb(43, 43, 43);
 }
+
 .wheels h1 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   font-weight: bold;
 }
+
 .buyersguide a {
   color: rgb(43, 43, 43);
   border-bottom: 1px solid rgb(43, 43, 43);
 }
+
 .buyersguide {
   //display: grid;
   //padding-top: 200px;
-
   justify-content: center;
   margin-top: 70px;
   border-radius: 4px;
-  background: rgb(253, 253, 253);
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: rgb(
+    253,
+    253,
+    253
+  ); // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 100vw;
   color: rgb(43, 43, 43);
@@ -315,35 +324,39 @@ div :nth-child(10) {
   padding-top: 50px;
   padding-bottom: 5px;
 }
+
 .buyersguide h1 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   font-weight: bold;
 }
+
 .buyersguide h2 {
-  font-family: 'Times New Roman', Times, serif;
-  //border-bottom: 0.3px solid grey;
+  font-family: 'Times New Roman', Times, serif; //border-bottom: 0.3px solid grey;
   box-shadow: 1px 1px 5px rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   font-weight: bold;
   font-size: 18px;
   text-align: center;
 }
+
 .buyersguide p {
   width: 80%;
   padding-top: 50px;
-  padding-bottom: 50px;
-  // grid-row-start: 2;
+  padding-bottom: 50px; // grid-row-start: 2;
   color: rgb(43, 43, 43);
 }
+
 .questionone {
   justify-content: center;
   margin-top: 70px;
   border-radius: 4px;
-  background: rgb(253, 253, 253);
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: rgb(
+    253,
+    253,
+    253
+  ); // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 100vw;
   color: rgb(43, 43, 43);
@@ -351,33 +364,65 @@ div :nth-child(10) {
   display: grid;
   padding-top: 50px;
 }
+
 .questionone a {
   color: rgb(43, 43, 43);
 }
+
 .card {
 }
+
 .NaveBarH1 {
-  color: whitesmoke;
-  font-family: 'Times New Roman', Times, serif;
+  color: rgb(65, 107, 225);
+  font-family: Optima;
   border-bottom: 0.3px solid white;
   border-radius: 10px;
   border-bottom: 0.3px solid white;
   padding: 1px;
-  font-size: 20px;
+  font-size: 25px;
   width: 50vw;
   text-align: center;
+}
+.menu {
+  color: blue;
+  background: blue;
+}
+.featurespractice {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  background: white;
+  color: rgb(129, 126, 126);
+  text-decoration: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+.featurespractice li a {
+  color: rgb(32, 32, 32);
+  font-size: 0.73em;
+  background: none;
+  padding-top: 30px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+}
+.featurespractice li {
+  padding-top: 20px;
+  background: none;
 }
 .navbar {
   width: 100%;
   color: red;
   justify-content: space-between;
 }
+
 .navbarbutton {
   display: flex;
   width: 40vw;
   margin: auto;
   margin-right: 0;
 }
+
 nav img {
   position: relative;
   left: 10px;
@@ -385,16 +430,7 @@ nav img {
   width: 80px;
   height: 40px;
 }
-.navbar-toggler {
-  border-radius: 2px;
-  border-top-width: 2px;
-  border-bottom-width: 2px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  position: relative;
-  right: 10px;
-  display: flex;
-}
+
 .navbar-toggler {
   border-radius: 2px;
   border-top-width: 2px;
@@ -406,7 +442,7 @@ nav img {
   display: flex;
 }
 
-.a {
+.navbar-toggler {
   border-radius: 2px;
   border-top-width: 2px;
   border-bottom-width: 2px;
@@ -416,32 +452,77 @@ nav img {
   right: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.searchbar {
+  border-radius: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+}
+
+.a {
+  border-radius: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  display: flex;
+  flex-direction: column;
   width: 100px;
-  margin: auto;
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 0px;
   border-right-width: 0px;
   border-radius: 10px;
+  float: right;
+  position: relative;
+  top: -20px;
+  right: 70px;
+  text-align: center;
+  justify-self: center;
+  margin: 0px;
 }
+
+.a input {
+  position: relative;
+  top: -50px;
+}
+
 .searchbar {
   display: flex;
   justify-content: center;
   width: 100vw;
   margin: auto;
 }
+
+.searchbara {
+  border-radius: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin: auto;
+  width: 15%;
+  min-width: 200px;
+}
+
 .thingsToConsider h1 {
   //padding: 5px;
   //box-shadow: 1px 1px 5px rgb(133, 133, 134);
   //border-bottom: 0.5px solid rgb(192, 187, 187);
-  text-align: center;
-  //padding-top: 20px;
-
+  text-align: center; //padding-top: 20px;
   //font-size: 28px;
   //border: 1px solid blue;
   font-family: 'Times New Roman', Times, serif;
   color: whitesmoke;
-
   padding-bottom: 10px;
   padding-top: 10px;
   color: whitesmoke;
@@ -455,39 +536,119 @@ nav img {
   color: whitesmoke;
   font-size: 25px;
 }
+.xxx {
+  font-size: 10px;
+  list-style: none;
+}
+.xxxp {
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+  background: white;
+}
+.xxxp li {
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  padding-bottom: 30px;
+}
+.xxxp a {
+  font-size: 15px;
+  text-align: center;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'copperplate';
+
+  line-height: 1.846;
+  /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
+}
+.userfeaturesimage {
+  width: 100vw;
+  padding-top: 30px;
+}
+.userfeaturesimageall {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  border: 1px solid blue;
+}
 .userfeatures {
-  margin: auto;
   float: left;
   color: whitesmoke;
-
-  justify-content: center;
-  border-radius: 4px;
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
-  text-align: left;
+  border-radius: 4px; // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+  //border-bottom: 1px solid whitesmoke;
+  //  border-right: 1px solid whitesmoke;
 
-  justify-self: center;
-  margin: auto;
-  margin-left: 0px;
+  // padding-right: 25px;
+  padding-top: 0px;
+  position: relative;
+  top: -70px;
+  left: 140px;
+  font: 10px;
+  list-style: none;
 }
+.zzz {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  font-size: 12px;
+}
+.userfeatures p {
+  list-style: none;
+}
+
 .userfeatures li {
   color: whitesmoke;
   list-style: none;
   font-size: 20px;
-  margin-top: 90px;
-  margin-left: 0px;
 }
-.userfeatures a {
+
+.userfeatures li a {
+  color: whitesmoke;
+  list-style: none; //border-bottom: 0.3px solid whitesmoke;
+  //border-top: 0.3px solid whitesmoke;
+  //padding: 5px;
+  border-radius: 10px;
+  color: black;
+}
+.www {
+  color: black;
+  list-style: none;
+}
+
+.userfeaturesa {
   color: whitesmoke;
   list-style: none;
   border-bottom: 0.3px solid whitesmoke;
   border-top: 0.3px solid whitesmoke;
-  padding: 5px;
+  padding: 0px;
   border-radius: 10px;
   margin-left: 0px;
-  position: relative;
-  right: 50px;
+  justify-content: center;
+  text-align: center;
 }
+
+.userfeatures h3 {
+  border-bottom: 1px solid whitesmoke;
+}
+.userfeatures li a {
+  color: red;
+}
+ol {
+  color: black;
+  list-style: none;
+}
+
 .rollerbladelogo {
   color: whitesmoke;
   display: flex;
@@ -499,51 +660,80 @@ nav img {
   right: 20px;
   border-radius: 5px;
 }
+.rollerbladelogoshop {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin: auto;
+  position: relative;
+  top: 260px;
+  right: 50px;
+  border-radius: 5px;
+}
 .thingsToConsider {
   color: whitesmoke;
   background-color: none;
   background: none;
-  border: 0.3px solid whitesmoke;
+  //border: 0.3px solid whitesmoke;
 }
+
 h3 {
-  border-bottom: 0.3px solid rgb(52, 58, 64);
+  // border-bottom: 0.3px solid rgb(52, 58, 64);
   border-radius: 5px;
 }
+
 .showrollerblades {
   //display: grid;
   //padding-top: 200px;
-  color: rgb(52, 58, 64);
-
+  color: whitesmoke(52, 58, 64);
   justify-content: center;
   margin-top: 70px;
   border-radius: 10px;
-  background: whitesmoke;
+  background: rgb(52, 58, 64);
   // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
-  width: 30vw;
+  width: 50vw;
   font-family: 'Times New Roman', Times, serif;
-
   padding: 40px;
   justify-self: center;
   margin: auto;
-  margin-top: 100px;
-  border-bottom: rgb(52, 58, 64);
+  margin-top: 20px;
+  border-bottom: whitesmoke(52, 58, 64);
 }
+.showrollerbladesborder {
+  // border-bottom: 1px solid whitesmoke;
+  width: 20%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 5px;
+  color: whitesmoke;
+  font-size: 15px;
+  position: relative;
+  right: 180px;
+}
+.showrollerbladestitle {
+  color: whitesmoke;
+  font: white;
+  text-decoration: whitesmoke;
+}
+.suggtitle {
+  border-bottom: 1px solid whitesmoke;
+}
+
 .showrollerblades li {
   list-style: none;
 }
+
 .thingsToConsidersearch {
   //padding: 5px;
   //box-shadow: 1px 1px 5px rgb(133, 133, 134);
   //border-bottom: 0.5px solid rgb(192, 187, 187);
-  text-align: center;
-  //padding-top: 20px;
-
+  text-align: center; //padding-top: 20px;
   //font-size: 28px;
   //border: 1px solid blue;
   font-family: 'Times New Roman', Times, serif;
   color: whitesmoke;
-
   padding-bottom: 10px;
   padding-top: 20px;
   color: whitesmoke;
@@ -556,25 +746,317 @@ h3 {
   margin: auto;
   color: whitesmoke;
 }
+
 .RecoSkates {
   //display: grid;
   //padding-top: 200px;
   color: rgb(52, 58, 64);
-
   justify-content: center;
   border-radius: 10px;
-  background: whitesmoke;
-  // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  background: whitesmoke; // box-shadow: 0px 0px 55px rgb(158, 157, 157);
   text-align: center;
   width: 30vw;
   font-family: 'Times New Roman', Times, serif;
-
   justify-self: center;
   margin: auto;
   border-bottom: rgb(52, 58, 64);
   position: relative;
   right: 300px;
 }
+
+.navbuttonsa {
+  margin: auto;
+  float: left;
+  color: whitesmoke;
+  justify-content: center;
+  border-radius: 4px; // box-shadow: 0px 0px 55px rgb(158, 157, 157);
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  justify-self: center;
+  margin: auto;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -20px;
+  right: 40px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.navbuttons {
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  font-family: optima;
+  color: rgb(112, 109, 109);
+}
+
+.thingsToConsider form {
+  width: 400px;
+}
+.ShopSearch {
+  //display: grid;
+  //padding-top: 200px;
+  color: whitesmoke;
+  justify-content: center;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  justify-self: center;
+  margin: auto;
+}
+
+.ShopSearchBar {
+  position: relative;
+  width: 25vw;
+  color: #969595;
+  font-size: 12px;
+  border: none;
+  box-shadow: 3px 2px 4px rgb(137, 137, 138);
+  // border-left: 1px solid grey;
+  border-radius: 2px;
+}
+form {
+  border: none;
+}
+.search-form {
+  border: none;
+}
+.shopImage {
+  margin: auto;
+  color: whitesmoke;
+  justify-content: center;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  justify-self: center;
+  margin: auto;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: right;
+  position: relative;
+  top: 400px;
+  right: 100px;
+}
+.shopimagetwo {
+  margin: auto;
+  color: whitesmoke;
+  justify-content: center;
+  border-radius: 20px;
+  text-align: center;
+  width: 500px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  justify-self: center;
+  margin: auto;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20px;
+  right: 70px;
+  height: 600px;
+}
+.shoplogo {
+  //display: grid;
+  //padding-top: 200px;
+  color: whitesmoke;
+  justify-content: center;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  justify-self: center;
+  margin: auto;
+  border: 1px solid blue;
+  position: relative;
+  top: 0px;
+  font-size: 250px;
+}
+
+.card {
+  width: 60%;
+  margin: auto;
+  align-self: center;
+  margin-top: 20px;
+}
+.aaa {
+  width: 90%;
+  height: 50vh;
+  margin: auto;
+  position: relative;
+  left: 340px;
+}
+.bbb {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  background: white;
+  margin: auto;
+  justify-content: center;
+}
+.bbb h1 {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin: auto;
+  justify-content: center;
+}
+.navbar {
+  background-color: whitesmoke;
+}
+.thingsToConsiderpracticepp {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  background: white;
+}
+.UsersP {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  background: white;
+  font-size: 100px;
+}
+.thingsToConsiderpracticepp h3 {
+  font-size: 20px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.thingsToConsiderpracticepp img {
+  font-size: 20px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-weight: 500;
+  border: none;
+}
+.thingsToConsiderpractice h1 {
+  font-size: 40px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 500;
+}
+.thingsToConsiderpracticep h1 {
+  font-size: 40px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.Borderbottom {
+  // border-bottom: 1px solid rgb(123, 123, 124);
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+}
+.thingsToConsiderpracticep h3 {
+  font-size: 20px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.Borderbottomfeatures {
+  border-bottom: 0.1px solid rgb(150, 150, 150);
+
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 5px;
+}
+
+.thingsToConsiderpracticep p {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  line-height: 1.846;
+  /* font-family: Open Sans,sans-serif; */
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #1d1d1d;
+  letter-spacing: 1px;
+}
+
+.Bordertopfeatures {
+  border-top: 0.1px solid rgb(150, 150, 150);
+
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 20px;
+}
+.thingsToConsiderpractice p {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  line-height: 1.846;
+  /* font-family: Open Sans,sans-serif; */
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #1d1d1d;
+  letter-spacing: 1px;
+}
+.navbar img {
+  width: 150px;
+}
+.zzz {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  border: none;
+  text-align: center;
+  color: rgb(61, 61, 61);
+}
+.zzzz {
+  position: relative;
+  right: 40px;
+}
+
 @media screen and (min-width: 680px) {
   body {
   }

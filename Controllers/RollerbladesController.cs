@@ -50,7 +50,7 @@ namespace Rollerblading_Buyers_Guide.Controllers
             }
             else
             {
-                return await _context.Rollerblades.Where(restaurant => restaurant.Skill.Contains(filter)).ToListAsync();
+                return await _context.Rollerblades.Where(rollerblade => rollerblade.Title.Contains(filter)).ToListAsync();
             }
         }
         // [HttpGet]

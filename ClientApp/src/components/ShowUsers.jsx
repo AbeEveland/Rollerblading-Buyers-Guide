@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 // import format from 'date-fns/format'
 import { authHeader } from './auth'
+import { NavBar } from './NavBar'
 
 const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
 
@@ -75,12 +76,50 @@ export function ShowUsers() {
     //     )}
     //   </div>
     <>
+      <div className="xxxp">
+        <li className="">
+          <a className=" " href="/ThingsToConsider">
+            {' '}
+            Things To Consider
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/AddRollerblades">
+            {' '}
+            Add
+          </a>
+        </li>
+
+        <li className="">
+          <a className="" href="/ShowRollerblades">
+            {' '}
+            View / Your Blades
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/RecommendedSkates">
+            {' '}
+            View / All
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/ShowUsers">
+            {' '}
+            Users
+          </a>
+        </li>
+      </div>
       {users.length > 0 && (
-        <div className="showrollerblades">
-          <h3>Users</h3>
+        <div className="thingsToConsiderpractice">
+          <h1 className="Borderbottomfeatures">Users</h1>
           {users.map(rollerblade => (
-            <li key={rollerblade.id}>
+            <li className="UsersP" key={rollerblade.id}>
               <p className="">{rollerblade.fullName}</p>
+              <img
+                className="userfeaturesimage"
+                src="https://www.powerslide.com/bilder/startseite/swell_skates.jpg"
+                alt=""
+              />
             </li>
           ))}
         </div>

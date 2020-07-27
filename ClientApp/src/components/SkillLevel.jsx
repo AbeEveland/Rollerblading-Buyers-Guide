@@ -1,31 +1,40 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
 import { Home } from './Home'
+import { NavBar } from './NavBar'
 
 const SkillLevel = () => {
   return (
     <>
-      {/* <div className="homePageContainer"> */}
-      {/* <img
-        className="logo"
-        src="https://store-images.s-microsoft.com/image/apps.14716.9007199266365238.ab475298-d17b-437b-b143-0537efcad818.aabd06dc-87c7-47a9-addf-1e26155db4b4?mode=scale&q=90&h=300&w=300"
-        alt=""
-        width="30px"
-      /> */}
-      <div className="homePageHeader">
-        <a href="/">Home</a>
-        <h1 className="headinghH1">ROLLERBLADE WAREHOUSE</h1>
-
-        <button className="homePageAccountButtons">
-          <img
-            className="homePageAccountButton"
-            src="https://thumbs.dreamstime.com/b/user-account-line-icon-outline-person-logo-illustration-linear-pictogram-isolated-white-90234649.jpg"
-            alt="Account"
-            width="20px"
-          />
-        </button>
+      <div className="xxxp">
+        <li>
+          <a className=" " href="/SkatingStyle">
+            Style
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/SkatingEnviroment">
+            Enviroment
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/BootMaterial">
+            Boots{' '}
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/Wheels">
+            Wheels{' '}
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/Frame">
+            {' '}
+            Frame
+          </a>
+        </li>
       </div>
-      <div className="skillLevel">
+      <div className="thingsToConsiderpracticep">
         <h1>Skill Level</h1>
         <p>
           In order to enjoy skating, you need a skate that suits your abilities.
@@ -36,7 +45,8 @@ const SkillLevel = () => {
           that is too far outside of your skill level will take the fun out of
           skating and may cause you to injure yourself!
         </p>{' '}
-        <h2>Beginner</h2>
+        <h3>Beginner</h3>
+        <div className="Borderbottomfeatures"></div>
         <p>
           For new and returning skaters with little or no confidence in ability.
           All models are supportive, stable and feel comfortable out of the box
@@ -44,7 +54,8 @@ const SkillLevel = () => {
           for slower and more controlled speed so that confidence and skill can
           increase.
         </p>
-        <h2>Intermediate</h2>
+        <h3>Intermediate</h3>
+        <div className="Borderbottomfeatures"></div>
         <p>
           These skates require some skating experience, either recently or in
           the past, with confidence in your ability to turn and brake. If you've
@@ -55,7 +66,8 @@ const SkillLevel = () => {
           skating you're after and the environment you have available to skate
           in.
         </p>
-        <h2>Advanced</h2>
+        <h3>Advanced</h3>
+        <div className="Borderbottomfeatures"></div>
         <p>
           Skating is (or was) part of your regular routine. Your ability and
           experience give you the confidence to skate your heart out no matter
@@ -64,7 +76,8 @@ const SkillLevel = () => {
           ability will demand performance from the skate and may overpower
           basic, lower level models.
         </p>
-        <h2>Expert</h2>
+        <h3>Expert</h3>
+        <div className="Borderbottomfeatures"></div>
         <p>
           You have clocked years of dedication to the sport and are without
           limits. You have mastered your stride, can skate forward or back, long

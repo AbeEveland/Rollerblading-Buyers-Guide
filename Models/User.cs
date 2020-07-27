@@ -14,16 +14,32 @@ namespace rollerblading_buyers_guide.Models
         [Required]
         public string FullName { get; set; }
         [Required]
+
+        public string UserName { get; set; }
+
+        [Required]
         public string Email { get; set; }
+        [Required]
+
         public string Skill { get; set; }
+        [Required]
+
         public string MANEUVERABILITY { get; set; }
+        [Required]
+
         public string Speed { get; set; }
+        [Required]
+
         public string Fit { get; set; }
+
         public string Price { get; set; }
+
         public string Suggestion { get; set; }
 
         [JsonIgnore]
         public string HashedPassword { get; set; }
+        [Required]
+
         public string Password
         {
             set

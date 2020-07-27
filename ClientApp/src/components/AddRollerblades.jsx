@@ -5,13 +5,18 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 
 import { authHeader } from './auth'
+import { NavBar } from './NavBar'
 
 export function AddRollerblades() {
   const history = useHistory()
   const [errorMessage, setErrorMessage] = useState()
   const [newRollerblade, setNewRollerblade] = useState({
-    userName: '',
     title: '',
+    skill: '',
+    maneuverability: '',
+    speed: '',
+    fit: '',
+    price: '',
     description: '',
     photoURL: '',
   })
@@ -81,10 +86,35 @@ export function AddRollerblades() {
 
   return (
     <>
-      <a href="/">Home</a>
+      <div className="xxxp">
+        <li className="">
+          <a className=" " href="/ThingsToConsider">
+            {' '}
+            Things To Consider
+          </a>
+        </li>
 
+        <li className="">
+          <a className="" href="/ShowRollerblades">
+            {' '}
+            View / Your Blades
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/RecommendedSkates">
+            {' '}
+            View / All
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/ShowUsers">
+            {' '}
+            Users
+          </a>
+        </li>
+      </div>
       <div className="card">
-        <div className="card-header">Add a Pair of skates</div>
+        <div className="card-header">Add a Pair of rollerblades</div>
         <div className="card-body">
           {errorMessage && (
             <div className="alert alert-danger" role="alert">
@@ -92,7 +122,7 @@ export function AddRollerblades() {
             </div>
           )}
           <form onSubmit={handleFormSubmit}>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label htmlFor="name">Username</label>
               <input
                 type="text"
@@ -100,11 +130,11 @@ export function AddRollerblades() {
                 id="userName"
                 value={newRollerblade.userName}
                 onChange={handleFieldChange}
-              />
-            </div>
+              /> */}
+            {/* </div> */}
 
             <div className="form-group">
-              <label htmlFor="description">Title</label>
+              <label htmlFor="title">Title</label>
               <textarea
                 type="text"
                 className="form-control"
@@ -113,24 +143,92 @@ export function AddRollerblades() {
                 onChange={handleFieldChange}
               />
               <small id="titleHelp" className="form-text text-muted">
-                Enter the title of the skates{' '}
+                Input the title of the skates
               </small>
             </div>
 
             <div className="form-group">
-              <label htmlFor="address">Description</label>
+              <label htmlFor="skill">Skill</label>
               <textarea
                 type="text"
                 className="form-control"
-                id="Description"
-                value={newRollerblade.Description}
+                id="skill"
+                value={newRollerblade.skill}
                 onChange={handleFieldChange}
-              />
+              />{' '}
+              <small id="titleHelp" className="form-text text-muted">
+                Input Beginner, Intermediate, Advanced, or Pro.
+              </small>
+            </div>
+            <div className="form-group">
+              <label htmlFor="maneuverability">Maneuverability</label>
+              <textarea
+                type="text"
+                className="form-control"
+                id="maneuverability"
+                value={newRollerblade.maneuverability}
+                onChange={handleFieldChange}
+              />{' '}
+              <small id="titleHelp" className="form-text text-muted">
+                Input Low, Medium, High, or Very High.
+              </small>
+            </div>
+            <div className="form-group">
+              <label htmlFor="speed">Speed</label>
+              <textarea
+                type="text"
+                className="form-control"
+                id="speed"
+                value={newRollerblade.speed}
+                onChange={handleFieldChange}
+              />{' '}
+              <small id="titleHelp" className="form-text text-muted">
+                Input Low, Medium, High, or Very High.
+              </small>
+            </div>
+            <div className="form-group">
+              <label htmlFor="fit">Fit</label>
+              <textarea
+                type="text"
+                className="form-control"
+                id="fit"
+                value={newRollerblade.fit}
+                onChange={handleFieldChange}
+              />{' '}
+              <small id="titleHelp" className="form-text text-muted">
+                Input Comfort, Racing, or Balanced.
+              </small>
+            </div>
+            <div className="form-group">
+              <label htmlFor="price">Price</label>
+              <textarea
+                type="text"
+                className="form-control"
+                id="price"
+                value={newRollerblade.price}
+                onChange={handleFieldChange}
+              />{' '}
+              <small id="titleHelp" className="form-text text-muted">
+                Input the price.
+              </small>
+            </div>
+            <div className="form-group">
+              <label htmlFor="description">Description</label>
+              <textarea
+                type="text"
+                className="form-control"
+                id="description"
+                value={newRollerblade.description}
+                onChange={handleFieldChange}
+              />{' '}
+              <small id="titleHelp" className="form-text text-muted">
+                Input the description of the rollerblade.
+              </small>
             </div>
 
             <div className="alert alert-primary">
               <div {...getRootProps()}>
-                <input {...getInputProps()} />
+                <input value={newRollerblade.photoURL} {...getInputProps()} />
                 {isDragActive
                   ? 'Drop the files here ...'
                   : 'Drag a new file here to upload!'}

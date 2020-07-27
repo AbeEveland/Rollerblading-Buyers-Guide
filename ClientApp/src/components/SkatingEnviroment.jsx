@@ -1,24 +1,12 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
 import { Home } from './Home'
+import { NavBar } from './NavBar'
 
 const SkatingEnviroment = () => {
   return (
     <>
-      <div className="homePageHeader">
-        <a href="/">Home</a>
-        <h1 className="headinghH1">ROLLERBLADE WAREHOUSE</h1>
-
-        <button className="homePageAccountButtons">
-          <img
-            className="homePageAccountButton"
-            src="https://thumbs.dreamstime.com/b/user-account-line-icon-outline-person-logo-illustration-linear-pictogram-isolated-white-90234649.jpg"
-            alt="Account"
-            width="20px"
-          />
-        </button>
-      </div>
-      <div className="SkatingStyle">
+      <div className="thingsToConsiderpractice">
         <h1>Skating Enviroment</h1>
         <p>
           Some skates specialize to be a certain type, while others are more
@@ -29,7 +17,6 @@ const SkatingEnviroment = () => {
           be immersed in the adrenaline-filled world of Aggressive, Urban and
           All-Terrain skating.
         </p>{' '}
-        <h2>The difference between free skating and urban skating</h2>
         <p>
           Although mostly similar there does seem to be a bit of difference
           between someone that does urban skating and free skating. Urban
@@ -45,6 +32,41 @@ const SkatingEnviroment = () => {
           making it easier to grind objects
         </p>
       </div>
+      <div className="xxxp">
+        <li>
+          <a className="" href="/SkillLevel">
+            {' '}
+            Skill
+          </a>
+        </li>
+
+        <li>
+          <a className=" " href="/SkatingStyle">
+            Style
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/BootMaterial">
+            Boots{' '}
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/Wheels">
+            Wheels{' '}
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/Frame">
+            {' '}
+            Frame
+          </a>
+        </li>
+      </div>
+      <img
+        className="userfeaturesimage"
+        src="https://www.powerslide.com/bilder/_custom/kategorien/sports_rollerskates-dance.jpg"
+        alt=""
+      />
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>

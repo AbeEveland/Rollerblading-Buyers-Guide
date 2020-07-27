@@ -1,106 +1,104 @@
-import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { authHeader } from './auth'
+import React, { useState, useEffect, Component } from 'react'
+import { Route, Switch } from 'react-router'
+import { Home } from './Home'
 
-export function ShowRollerblades() {
-  // fetch('/api/Rollerblades', {
-  //   method: 'GET',
-  //   headers: { 'content-type': 'application/json', ...authHeader() },
-  //   body: JSON.stringify(newReview),
-  // })
+import { Link } from 'react-router-dom'
+import { getUser } from './auth'
+import { NavBar } from './NavBar'
+import { Rollerblades } from './Rollerblades'
 
-  const [rollerblade, setRollerblade] = useState({
-    title: '',
-    // description: '',
-    // address: '',
-    // telephone: '',
-    // reviews: [],
-  })
+const ShowRollerblades = () => {
+  const [rollerblades, setRollerblades] = useState([])
+  const [users, setUsers] = useState([])
 
-  const params = useParams()
-  const id = params.id
+  const user = getUser()
+  console.log(user)
+  useEffect(() => {
+    fetch('/api/Rollerblades')
+      .then(response => response.json())
+      .then(apiData => {
+        setRollerblades(apiData)
+      })
+  }, [])
+  useEffect(() => {
+    fetch('/api/Users')
+      .then(response => response.json())
+      .then(apiData => {
+        setUsers(apiData)
+      })
+  }, [])
 
-  const fetchrollerblades = async () => {
-    const response = await fetch(`api/Rollerblades`)
-    const apiData = await response.json()
+  const proUserSkate = rollerblades.filter(
+    rollerblade => rollerblade.skill === user.skill
+  )
+  const [activeFilter, setActiveFilter] = useState('')
 
-    setRollerblade(apiData)
-  }
-
-  useState(() => {
-    fetchrollerblades()
-  }, [id])
   return (
-    <div className="taco-listing">
-      <div className="media mb-5">
-        <div className="media-body">
-          <div className="showrollerblades"></div>
-          {/* <h1 className="mt-0">{rollerblade.title}</h1> */}
-          {/* {restaurant.description} */}
-          {/* <address className="mt-3">
-            {/* <Link to="maps.google.com">{restaurant.address}</Link> */}
-          {/* </address> */}
-          {/* <Link to={`tel:${restaurant.telephone}`}>{restaurant.telephone}</Link> */}{' '}
-          */}
-        </div>
+    <>
+      <div className="xxxp">
+        <li className="">
+          <a className=" " href="/ThingsToConsider">
+            {' '}
+            Things To Consider
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/AddRollerblades">
+            {' '}
+            Add
+          </a>
+        </li>
+
+        <li className="">
+          <a className=" " href="/RecommendedSkates">
+            {' '}
+            View / All
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/ShowUsers">
+            {' '}
+            Users
+          </a>
+        </li>
       </div>
+      {rollerblades.length > 0 && (
+        <div className="thingsToConsiderpractice">
+          <h1 className="">These rollerblades have been picked for you!</h1>
 
-      {/* <div className="row mb-5">
-        {rollerblade.reviews.length > 0 && (
-          <div className="col-12">
-            <h3>Reviews</h3>
-            <ul className="timeline">
-              {rollerblade.reviews.map(review => (
-                <li key={review.id}>
-                  <p className="mb-2">
-                    {review.summary}
-                    <span className="float-right">{review.createdAt}</span>
-                  </p>
-                  <p>{review.body}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div> */}
-
-      {/* <div className="card">
-        <div className="card-header">Enter your own review</div>
-        <div className="card-body">
-          <form>
-            <div className="form-group">
-              <label htmlFor="summary">Summary</label>
-              <input
-                type="text"
-                className="form-control"
-                id="summary"
-                aria-describedby="summaryHelp"
-              />
-              <small id="summaryHelp" className="form-text text-muted">
-                Enter a brief summary of your review. Example:{' '}
-                <strong>Great food, good prices.</strong>
-              </small>
-            </div>
-            <div className="form-group">
-              <label for="review">Review</label>
-              <textarea type="text" className="form-control" id="review" />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </div>
-      </div> */}
-      {rollerblade.length > 0 && (
-        <div className="showrollerblades">
-          <h3>Roller Blades</h3>
-          {rollerblade.map(rollerblade => (
-            <li key={rollerblade.id}>
-              <p className="">{rollerblade.title}</p>
-            </li>
+          {proUserSkate.map(skate => (
+            <>
+              <div className="thingsToConsiderpractice">
+                <p className="">{skate.title}</p>
+                <img
+                  className="userfeaturesimage"
+                  src={skate.photoURL}
+                  alt=""
+                  width="500px"
+                />
+              </div>
+            </>
           ))}
         </div>
       )}
-    </div>
+      <main className="thingsToConsiderpractice">
+        <Switch>
+          <Route exact path="/RecommendedSkates">
+            <Rollerblades activeFilter={activeFilter} />
+          </Route>
+          {/* <Route path="/restaurants/add">
+            <AddRestaurant />
+          </Route>
+          <Route path="/restaurants/:id">
+            <ShowRestaurant />
+          </Route>  */}
+        </Switch>
+      </main>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </>
   )
 }
+
+export default ShowRollerblades

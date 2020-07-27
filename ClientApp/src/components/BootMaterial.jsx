@@ -1,24 +1,43 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router'
 import { Home } from './Home'
+import { NavBar } from './NavBar'
+
 const BootMaterial = () => {
   return (
     <>
-      <div className="homePageHeader">
-        <a href="/">Home</a>
-        <h1 className="headinghH1">ROLLERBLADE WAREHOUSE</h1>
+      <div className="xxxp">
+        <li>
+          <a className="" href="/SkillLevel">
+            {' '}
+            Skill
+          </a>
+        </li>
 
-        <button className="homePageAccountButtons">
-          <img
-            className="homePageAccountButton"
-            src="https://thumbs.dreamstime.com/b/user-account-line-icon-outline-person-logo-illustration-linear-pictogram-isolated-white-90234649.jpg"
-            alt="Account"
-            width="20px"
-          />
-        </button>
+        <li>
+          <a className=" " href="/SkatingStyle">
+            Style
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/SkatingEnviroment">
+            Evironment{' '}
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/Wheels">
+            Wheels{' '}
+          </a>
+        </li>
+        <li>
+          <a className=" " href="/Frame">
+            {' '}
+            Frame
+          </a>
+        </li>
       </div>
-      <div className="SkatingStyle">
-        <h1>Boot Types</h1>
+      <div className="thingsToConsiderpractice">
+        <h1>Boots</h1>
         <p>
           The three main boot types are soft boots, molded plastic and
           composite/carbon. Soft boots are lighter and better ventilated, making
@@ -30,6 +49,11 @@ const BootMaterial = () => {
           transfer and performance.
         </p>{' '}
       </div>
+      <img
+        className="userfeaturesimage"
+        src="https://www.powerslide.com/bilder/_custom/kategorien/race-boots_03.jpg"
+        alt=""
+      />
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>
