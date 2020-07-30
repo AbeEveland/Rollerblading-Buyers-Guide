@@ -1,3 +1,3 @@
-TRUNCATE TABLE "Rollerblades";
-INSERT INTO "Rollerblades" ("UserName", "Title", "Description")  VALUES ('Abeeba', 'RB 110', 'Hard boot with three 110mm wheels. No brake. Short Frame');
-INSERT INTO "Rollerblades" ("UserName", "Title", "Description") VALUES ('CarterE', 'K2 Trio 110', 'Soft shell. Three large 110mm wheels. Agile frame');
+TRUNCATE TABLE "Rollerblades", "Reviews" RESTART IDENTITY;
+INSERT INTO "Rollerblades" ("Title", "Description" ) VALUES ('K3 trio', 'Inverse zero administration benchmark');
+INSERT INTO "Reviews" ("RollerbladeId",  "Summary", "Body") VALUES (1,  'Mmmmm, good', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima modi impedit quisquam sit, saepe enim placeat a vero voluptas asperiores atque laudantium in, nobis sunt blanditiis dignissimos. Deleniti, esse optio!');

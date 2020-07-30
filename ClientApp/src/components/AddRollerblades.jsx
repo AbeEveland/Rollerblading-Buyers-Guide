@@ -29,7 +29,7 @@ export function AddRollerblades() {
 
     formData.append('file', fileToUpload)
 
-    const response = await fetch('/api/Uploads', {
+    const response = await fetch('/api/uploads', {
       method: 'POST',
       headers: {
         ...authHeader(),
@@ -41,7 +41,7 @@ export function AddRollerblades() {
       const apiResponse = await response.json()
 
       const url = apiResponse.url
-
+      console.log(url)
       setNewRollerblade({ ...newRollerblade, photoURL: url })
     } else {
       setErrorMessage('Unable to upload image')
@@ -86,7 +86,7 @@ export function AddRollerblades() {
 
   return (
     <>
-      <div className="xxxp">
+      <div className="sadd">
         <li className="">
           <a className=" " href="/ThingsToConsider">
             {' '}
@@ -125,7 +125,7 @@ export function AddRollerblades() {
             {/* <div className="form-group">
               <label htmlFor="name">Username</label>
               <input
-                type="text"
+              type="text"
                 className="form-control"
                 id="userName"
                 value={newRollerblade.userName}
@@ -142,63 +142,8 @@ export function AddRollerblades() {
                 value={newRollerblade.title}
                 onChange={handleFieldChange}
               />
-              <small id="titleHelp" className="form-text text-muted">
-                Input the title of the skates
-              </small>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="skill">Skill</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="skill"
-                value={newRollerblade.skill}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Beginner, Intermediate, Advanced, or Pro.
-              </small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="maneuverability">Maneuverability</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="maneuverability"
-                value={newRollerblade.maneuverability}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Low, Medium, High, or Very High.
-              </small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="speed">Speed</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="speed"
-                value={newRollerblade.speed}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Low, Medium, High, or Very High.
-              </small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="fit">Fit</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="fit"
-                value={newRollerblade.fit}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Comfort, Racing, or Balanced.
-              </small>
-            </div>
             <div className="form-group">
               <label htmlFor="price">Price</label>
               <textarea
@@ -208,9 +153,6 @@ export function AddRollerblades() {
                 value={newRollerblade.price}
                 onChange={handleFieldChange}
               />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input the price.
-              </small>
             </div>
             <div className="form-group">
               <label htmlFor="description">Description</label>
@@ -221,14 +163,60 @@ export function AddRollerblades() {
                 value={newRollerblade.description}
                 onChange={handleFieldChange}
               />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input the description of the rollerblade.
-              </small>
+            </div>
+            <p className="dropdownp">Classify your rollerblades</p>
+            <div className="dropdown">
+              <select
+                className="dropdown"
+                id="skill"
+                onChange={handleFieldChange}
+              >
+                <option value="Beginner">Skill</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Pro">Pro</option>
+              </select>
+
+              <select
+                className="dropdown"
+                id="maneuverability"
+                onChange={handleFieldChange}
+              >
+                <option value="">Maneuverability</option>
+
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Very High">Very High</option>
+              </select>
+              <select
+                className="dropdown"
+                id="speed"
+                onChange={handleFieldChange}
+              >
+                <option value="">Speed</option>
+
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Very High">Very High</option>
+              </select>
+
+              <select
+                className="dropdown"
+                id="fit"
+                onChange={handleFieldChange}
+              >
+                <option value="Comfort">Comfort</option>
+                <option value="Balanced">Balanced</option>
+                <option value="Racing">Racing</option>
+              </select>
             </div>
 
             <div className="alert alert-primary">
               <div {...getRootProps()}>
-                <input value={newRollerblade.photoURL} {...getInputProps()} />
+                <input value={newRollerblade.photoURL} type="hidden" />
                 {isDragActive
                   ? 'Drop the files here ...'
                   : 'Drag a new file here to upload!'}

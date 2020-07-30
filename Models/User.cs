@@ -19,7 +19,6 @@ namespace rollerblading_buyers_guide.Models
 
         [Required]
         public string Email { get; set; }
-        [Required]
 
         public string Skill { get; set; }
         [Required]
@@ -34,7 +33,7 @@ namespace rollerblading_buyers_guide.Models
 
         public string Price { get; set; }
 
-        public string Suggestion { get; set; }
+
 
         [JsonIgnore]
         public string HashedPassword { get; set; }
@@ -47,6 +46,8 @@ namespace rollerblading_buyers_guide.Models
                 this.HashedPassword = new PasswordHasher<User>().HashPassword(this, value);
             }
         }
+        public string PhotoURL { get; set; }
+
         public bool IsValidPassword(string password)
         {
             var passwordVerification = new PasswordHasher<User>().VerifyHashedPassword(this, this.HashedPassword, password);

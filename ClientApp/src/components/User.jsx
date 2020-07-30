@@ -1,44 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-function SingleRollerbladeFromList(props) {
-  const rollerblade = props.rollerblade
+function SingleUserFromList(props) {
+  const user = props.user
 
   return (
     <>
-      <div
-        to={`/Rollerblades/${rollerblade.id}`}
-        className="recommendedskatesitem"
-      >
-        <div className="thingsToConsiderpracticepp">
-          <h1 className="pics">{rollerblade.title}</h1>
+      <div to={`/Users/${user.id}`} className="recommendedskatesitemuser">
+        <div className="thingsToConsiderpracticeppuser">
+          <li className="">{user.fullName}</li>
+          <div className="Borderbottomfeaturess"></div>
           <img
-            className="userfeaturesimageall"
-            src={rollerblade.photoURL}
+            className="userfeaturesimagealluser"
+            src={user.photoURL}
             alt=""
           />
-          <li>
-            <strong>Skill: </strong> {rollerblade.skill}
-          </li>
-          <li>
-            {' '}
-            <strong>Speed: </strong> {rollerblade.speed}
-          </li>
-          <li>
-            {' '}
-            <strong>Fit: </strong> {rollerblade.fit}
-          </li>
-          <li>
-            {' '}
-            <strong>Maneuverability : </strong> {rollerblade.maneuverability}
-          </li>
-          <li>
-            {' '}
-            <strong>Price: </strong>
-            {rollerblade.price}
-          </li>
+          <div className="Borderbottomfeaturess"></div>
 
-          <p className="description">{rollerblade.description}</p>
+          <li>
+            <strong>Skill:</strong> <br />
+            {user.skill}
+          </li>
+          <li>
+            <strong>Maneuverability:</strong> <br />
+            {user.maneuverability}
+          </li>
+          <li>
+            <strong>Speed:</strong> <br />
+            {user.speed}
+          </li>
+          <li>
+            <strong>Fit:</strong>
+            <br /> {user.fit}
+          </li>
+          <li>{user.price}</li>
         </div>
         {/* <small>5 Reviews</small> */}
         {/* <p className="mb-1">{rollerblade.description}</p> */}
@@ -63,20 +58,20 @@ function SingleRollerbladeFromList(props) {
   )
 }
 
-export function Rollerblades(props) {
-  const [rollerblades, setRollerblade] = useState([])
+export function User(props) {
+  const [user, setUser] = useState([])
 
-  console.log('Rollerblade list rendering')
+  console.log('User list rendering')
   useEffect(() => {
     const url =
       props.activeFilter.length === 0
-        ? `/api/Rollerblades`
-        : `/api/Rollerblades?filter=${props.activeFilter}`
+        ? `/api/Users`
+        : `/api/Users?filter=${props.activeFilter}`
 
     fetch(url)
       .then(response => response.json())
       .then(apiData => {
-        setRollerblade(apiData)
+        setUser(apiData)
       })
   }, [props.activeFilter])
 
@@ -90,11 +85,8 @@ export function Rollerblades(props) {
         </ol>
       </nav>
       <div className=" singlerollerbladefromlist">
-        {rollerblades.map(rollerblade => (
-          <SingleRollerbladeFromList
-            key={rollerblade.id}
-            rollerblade={rollerblade}
-          />
+        {user.map(user => (
+          <SingleUserFromList key={user.id} user={user} />
         ))}
       </div>
     </>

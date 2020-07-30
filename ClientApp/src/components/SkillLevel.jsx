@@ -6,7 +6,7 @@ import { NavBar } from './NavBar'
 const SkillLevel = () => {
   return (
     <>
-      <div className="xxxp">
+      <div className="sskill">
         <li>
           <a className=" " href="/SkatingStyle">
             Style
@@ -34,7 +34,7 @@ const SkillLevel = () => {
           </a>
         </li>
       </div>
-      <div className="thingsToConsiderpracticep">
+      <div className="qskill">
         <h1>Skill Level</h1>
         <p>
           In order to enjoy skating, you need a skate that suits your abilities.
@@ -45,7 +45,7 @@ const SkillLevel = () => {
           that is too far outside of your skill level will take the fun out of
           skating and may cause you to injure yourself!
         </p>{' '}
-        <h3>Beginner</h3>
+        <h2>Beginner</h2>
         <div className="Borderbottomfeatures"></div>
         <p>
           For new and returning skaters with little or no confidence in ability.
@@ -54,7 +54,7 @@ const SkillLevel = () => {
           for slower and more controlled speed so that confidence and skill can
           increase.
         </p>
-        <h3>Intermediate</h3>
+        <h2>Intermediate</h2>
         <div className="Borderbottomfeatures"></div>
         <p>
           These skates require some skating experience, either recently or in
@@ -66,7 +66,7 @@ const SkillLevel = () => {
           skating you're after and the environment you have available to skate
           in.
         </p>
-        <h3>Advanced</h3>
+        <h2>Advanced</h2>
         <div className="Borderbottomfeatures"></div>
         <p>
           Skating is (or was) part of your regular routine. Your ability and
@@ -76,7 +76,7 @@ const SkillLevel = () => {
           ability will demand performance from the skate and may overpower
           basic, lower level models.
         </p>
-        <h3>Expert</h3>
+        <h2>Expert</h2>
         <div className="Borderbottomfeatures"></div>
         <p>
           You have clocked years of dedication to the sport and are without

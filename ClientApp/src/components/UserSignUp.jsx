@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Route, Switch } from 'react-router'
 import { Home } from './Home'
+import { useDropzone } from 'react-dropzone'
 
 import { authHeader } from './auth'
 
@@ -17,8 +18,34 @@ export function SignUp() {
     password: '',
     email: '',
     username: '',
+    photoURL: '',
   })
+  const onDropFile = async acceptedFiles => {
+    const fileToUpload = acceptedFiles[0]
+    console.log(fileToUpload)
 
+    const formData = new FormData()
+
+    formData.append('file', fileToUpload)
+
+    const response = await fetch('/api/uploads', {
+      method: 'POST',
+      headers: {
+        ...authHeader(),
+      },
+      body: formData,
+    })
+
+    if (response.status === 200) {
+      const apiResponse = await response.json()
+
+      const url = apiResponse.url
+      console.log(url)
+      setNewRollerblade({ ...newRollerblade, photoURL: url })
+    } else {
+      setErrorMessage('Unable to upload image')
+    }
+  }
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
@@ -36,15 +63,22 @@ export function SignUp() {
       headers: { 'content-type': 'application/json', ...authHeader() },
       body: JSON.stringify(newRollerblade),
     })
-      .then(response => response.json())
-      .then(apiResponse => {
-        if (apiResponse.status === 400) {
-          setErrorMessage(Object.values(apiResponse.errors).join(' '))
-        } else {
-          history.push('/')
-        }
-      })
+    if (response.status === 401) {
+      setErrorMessage('Not Authorized')
+      return
+    }
+
+    const apiResponse = await response.json()
+
+    if (apiResponse.errors) {
+      setErrorMessage(Object.values(apiResponse.errors).join(' '))
+    } else {
+      history.push('/')
+    }
   }
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: onDropFile,
+  })
   return (
     <>
       <div className="card">
@@ -98,7 +132,7 @@ export function SignUp() {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <textarea
-                type="password"
+                type="Password"
                 className="form-control"
                 id="password"
                 value={newRollerblade.password}
@@ -109,59 +143,65 @@ export function SignUp() {
               </small>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="skill">Skill</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="skill"
-                value={newRollerblade.skill}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Beginner, Intermediate, Advanced, or Pro.
-              </small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="maneuverability">Maneuverability</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="maneuverability"
-                value={newRollerblade.maneuverability}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Low, Medium, High, or Very High.
-              </small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="speed">Speed</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="speed"
-                value={newRollerblade.speed}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Low, Medium, High, or Very High.
-              </small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="fit">Fit</label>
-              <textarea
-                type="text"
-                className="form-control"
-                id="fit"
-                value={newRollerblade.fit}
-                onChange={handleFieldChange}
-              />{' '}
-              <small id="titleHelp" className="form-text text-muted">
-                Input Comfort, Racing, or Balanced.
-              </small>
-            </div>
+            <select
+              className="dropdown"
+              id="skill"
+              onChange={handleFieldChange}
+            >
+              <option value="Beginner">Skill</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Pro">Pro</option>
+            </select>
 
+            <select
+              className="dropdown"
+              id="maneuverability"
+              onChange={handleFieldChange}
+            >
+              <option value="Beginner">Maneuverability</option>
+
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Very High">Very High</option>
+            </select>
+            <select
+              className="dropdown"
+              id="speed"
+              onChange={handleFieldChange}
+            >
+              <option value="Low">Speed</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Very High">Very High</option>
+            </select>
+
+            <select className="dropdown" id="fit" onChange={handleFieldChange}>
+              <option value="Comfort">Fit</option>
+              <option value="Comfort">Comfort</option>
+
+              <option value="Balanced">Balanced</option>
+              <option value="Racing">Racing</option>
+            </select>
+
+            {newRollerblade.photoURL && (
+              <img
+                className="userfeaturesimagealluser"
+                src={newRollerblade.photoURL}
+                alt="Profile picture"
+              />
+            )}
+            <div className="alert alert-primary">
+              <div {...getRootProps()}>
+                <input value={newRollerblade.photoURL} type="hidden" />
+                {isDragActive
+                  ? 'Drop the files here ...'
+                  : 'Drag a new file here to upload!'}
+              </div>
+            </div>
             <button type="submit" className="btn btn-primary">
               Submit
             </button>

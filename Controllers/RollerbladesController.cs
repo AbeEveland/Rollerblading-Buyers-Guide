@@ -52,6 +52,13 @@ namespace Rollerblading_Buyers_Guide.Controllers
             {
                 return await _context.Rollerblades.Where(rollerblade => rollerblade.Title.Contains(filter)).ToListAsync();
             }
+
+
+
+
+
+
+
         }
         // [HttpGet]
         // public async Task<ActionResult<IEnumerable<Rollerblades>>> GetRollerblades()
@@ -149,8 +156,12 @@ namespace Rollerblading_Buyers_Guide.Controllers
         // new values for the record.
         //
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
         public async Task<ActionResult<Rollerblades>> PostRollerblades(Rollerblades rollerblades)
         {
+            // rollerblades.UserId = GetCurrentUserId();
+
             // Indicate to the database context we want to add this new record
             _context.Rollerblades.Add(rollerblades);
             await _context.SaveChangesAsync();
@@ -195,6 +206,11 @@ namespace Rollerblading_Buyers_Guide.Controllers
         private bool RollerbladesExists(int id)
         {
             return _context.Rollerblades.Any(rollerblades => rollerblades.Id == id);
+        }
+        private int GetCurrentUserId()
+        {
+            // Get the User Id from the claim and then parse it as an integer.
+            return int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id").Value);
         }
     }
 }

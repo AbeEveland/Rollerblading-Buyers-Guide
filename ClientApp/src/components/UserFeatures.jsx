@@ -3,18 +3,7 @@ import React from 'react'
 export function UserFeatures() {
   return (
     <>
-      <div className="thingsToConsiderpractice">
-        <h1>Features</h1>
-        <p>
-          The above features will help you keep track of your rollerblading
-          data. You can: read up on things to consider when shopping for skates,
-          add your own pair of skates to the database, view your personally
-          suggested skates as well as all the skates on our site, and you can
-          check out your fellow bladers. Don't forget that in the search bar up
-          top, you can shop for any pair of skates!
-        </p>
-      </div>
-      <div className="xxxp">
+      <div className="s">
         <li className="">
           <a className=" " href="/ThingsToConsider">
             {' '}
@@ -47,12 +36,39 @@ export function UserFeatures() {
           </a>
         </li>
       </div>
-
-      <img
-        className="userfeaturesimage"
-        src="https://www.powerslide.com/bilder/_custom/kategorien/rollerskates_lifestyle.jpg"
-        alt=""
-      />
+      <div className="q">
+        <h1>Features</h1>
+      </div>
+      {/* <p>
+          The above features will help to keep track of your rollerblading data.
+          You can :
+          </p>
+          <li>- Read shopping considerations -</li>
+          <div className="Borderbottomfeaturess"></div>
+          <div classNAme="row">
+          <li>- Add a pair of skates. -</li>
+          <div className="Borderbottomfeaturess"></div>
+          <li>- View skates -</li>
+          <div className="Borderbottomfeaturess"></div>
+          <li>- Check out fellow bladers. -</li>
+        </div> */}
+      <div className="fleximage">
+        <img
+          className="userfeaturesimage"
+          src="https://www.powerslide.com/bilder/_custom/kategorien/rollerskates_lifestyle.jpg"
+          alt=""
+        />
+        <img
+          className="userfeaturesimagetwo"
+          src="https://www.powerslide.com/bilder/startseite/triskates.jpg"
+          alt=""
+        />
+        <img
+          className="userfeaturesimagetwo"
+          src="https://www.powerslide.com/bilder/_custom/kategorien/phuzion_1920.jpg"
+          alt=""
+        />
+      </div>
     </>
   )
 }

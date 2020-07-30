@@ -1,130 +1,74 @@
-import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-// import format from 'date-fns/format'
-import { authHeader } from './auth'
-import { NavBar } from './NavBar'
+import React, { useState, useEffect, Component } from 'react'
+import { Route, Switch } from 'react-router'
+import { Home } from './Home'
+import { User } from './User'
 
-const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
+import { Link } from 'react-router-dom'
+import { getUser } from './auth'
+import { NavBar } from './NavBar'
+import { Rollerblades } from './Rollerblades'
 
 export function ShowUsers() {
-  const params = useParams()
-  const id = parseInt(params.id)
+  const [rollerblades, setRollerblades] = useState([])
+  const [users, setUsers] = useState([])
 
-  const [users, setUsers] = useState({
-    fullName: '',
-    photoURL: '',
-  })
-
-  const [newReview, setNewReview] = useState({
-    body: '',
-    summary: '',
-    usersId: id,
-  })
-
-  const fetchusers = async () => {
-    const response = await fetch(`/api/Users`)
-    const apiData = await response.json()
-
-    setUsers(apiData)
-  }
-
-  useState(() => {
-    fetchusers()
-  }, [id])
-
-  const handleNewReviewFieldChange = event => {
-    const id = event.target.id
-    const value = event.target.value
-
-    setNewReview({ ...newReview, [id]: value })
-  }
-
-  const handleNewReviewSubmit = event => {
-    event.preventDefault()
-
-    fetch('/api/Reviews', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', ...authHeader() },
-      body: JSON.stringify(newReview),
-    })
-      .then(response => {
-        if (response.status === 401) {
-          return {}
-        } else {
-          return response.json()
-        }
+  const user = getUser()
+  console.log(user)
+  useEffect(() => {
+    fetch('/api/Rollerblades')
+      .then(response => response.json())
+      .then(apiData => {
+        setRollerblades(apiData)
       })
-      .then(apiResponse => {
-        fetchusers()
-        setNewReview({ ...newReview, body: '', summary: '' })
+  }, [])
+  useEffect(() => {
+    fetch('/api/Users')
+      .then(response => response.json())
+      .then(apiData => {
+        setUsers(apiData)
       })
-  }
+  }, [])
+
+  const proUserSkate = rollerblades.filter(
+    rollerblade => rollerblade.skill === user.skill
+  )
+  const [activeFilter, setActiveFilter] = useState('')
+
   return (
-    // <div className="taco-listing">
-    //   <div className="media mb-5">
-    //     {users.photoURL ? (
-    //       <img
-    //         alt="users Photo"
-    //         width={200}
-    //         className="pr-3"
-    //         src={users.photoURL}
-    //       />
-    //     ) : (
-    //       <span className="pr-3 display-2" role="img" aria-label="taco">
-    //         🌮
-    //       </span>
-    //     )}
-    //   </div>
     <>
-      <div className="xxxp">
-        <li className="">
-          <a className=" " href="/ThingsToConsider">
-            {' '}
-            Things To Consider
-          </a>
-        </li>
-        <li className="">
-          <a className=" " href="/AddRollerblades">
-            {' '}
-            Add
-          </a>
-        </li>
+      {/* <NavBar activeFilter={activeFilter} setActiveFilter={setActiveFilter} /> */}
 
-        <li className="">
-          <a className="" href="/ShowRollerblades">
-            {' '}
-            View / Your Blades
-          </a>
-        </li>
-        <li className="">
-          <a className=" " href="/RecommendedSkates">
-            {' '}
-            View / All
-          </a>
-        </li>
-        <li className="">
-          <a className=" " href="/ShowUsers">
-            {' '}
-            Users
-          </a>
-        </li>
-      </div>
-      {users.length > 0 && (
-        <div className="thingsToConsiderpractice">
-          <h1 className="Borderbottomfeatures">Users</h1>
-          {users.map(rollerblade => (
-            <li className="UsersP" key={rollerblade.id}>
-              <p className="">{rollerblade.fullName}</p>
-              <img
-                className="userfeaturesimage"
-                src="https://www.powerslide.com/bilder/startseite/swell_skates.jpg"
-                alt=""
-              />
-            </li>
+      {/* {rollerblades.length > 0 && (
+        <div className="showrollerblades">
+          <h3>These rollerblades have been picked for you</h3>
+
+          {proUserSkate.map(skate => (
+            <>
+              <p>{skate.title}</p>
+              <img src={skate.photoURL} alt="" width="50px" />
+            </>
           ))}
         </div>
-      )}
+      )} */}
+      <main className="">
+        <div className="quser">
+          <h1>Users</h1>
+        </div>
+        <Switch>
+          <Route exact path="/ShowUsers">
+            <User activeFilter={activeFilter} />
+          </Route>
+          {/* <Route path="/restaurants/add">
+            <AddRestaurant />
+          </Route>
+          <Route path="/restaurants/:id">
+            <ShowRestaurant />
+          </Route>  */}
+        </Switch>
+      </main>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
     </>
-    // </div>
   )
 }

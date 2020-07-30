@@ -10,6 +10,7 @@ import { Rollerblades } from './Rollerblades'
 const ShowRollerblades = () => {
   const [rollerblades, setRollerblades] = useState([])
   const [users, setUsers] = useState([])
+  const [id, setId] = useState([])
 
   const user = getUser()
   console.log(user)
@@ -20,6 +21,7 @@ const ShowRollerblades = () => {
         setRollerblades(apiData)
       })
   }, [])
+
   useEffect(() => {
     fetch('/api/Users')
       .then(response => response.json())
@@ -35,7 +37,7 @@ const ShowRollerblades = () => {
 
   return (
     <>
-      <div className="xxxp">
+      <div className="s">
         <li className="">
           <a className=" " href="/ThingsToConsider">
             {' '}
@@ -52,7 +54,7 @@ const ShowRollerblades = () => {
         <li className="">
           <a className=" " href="/RecommendedSkates">
             {' '}
-            View / All
+            All Blades
           </a>
         </li>
         <li className="">
@@ -62,23 +64,51 @@ const ShowRollerblades = () => {
           </a>
         </li>
       </div>
+      <div className="skatesheader">
+        <h1>Rollerblades</h1>
+      </div>
       {rollerblades.length > 0 && (
-        <div className="thingsToConsiderpractice">
-          <h1 className="">These rollerblades have been picked for you!</h1>
+        <div className="thingsToConsiderpracticepp">
+          {/* <h1 className="">These rollerblades have been picked for you!</h1> */}
+          <div className=" singlerollerbladefromlist">
+            {proUserSkate.map(skate => (
+              <>
+                <div className="recommendedskatesitem">
+                  <p className="">{skate.title}</p>
+                  <img
+                    className="userfeaturesimageall"
+                    src={skate.photoURL}
+                    alt=""
+                  />
 
-          {proUserSkate.map(skate => (
-            <>
-              <div className="thingsToConsiderpractice">
-                <p className="">{skate.title}</p>
-                <img
-                  className="userfeaturesimage"
-                  src={skate.photoURL}
-                  alt=""
-                  width="500px"
-                />
-              </div>
-            </>
-          ))}
+                  <li className="pics">
+                    <strong>Skill: </strong>
+                    {skate.skill}
+                  </li>
+                  <li className="pics">
+                    <strong>Maneuverability:</strong>
+                    {skate.maneuverability}
+                  </li>
+                  <li className="pics">
+                    {' '}
+                    <strong>Speed:</strong>
+                    {skate.speed}
+                  </li>
+                  <li className="pics">
+                    {' '}
+                    <strong>Fit:</strong> {skate.fit}
+                  </li>
+                  <li className="pics">
+                    {' '}
+                    <strong>Skill:</strong>
+                    {skate.price}
+                  </li>
+
+                  <p className="description">{skate.description}</p>
+                </div>
+              </>
+            ))}
+          </div>
         </div>
       )}
       <main className="thingsToConsiderpractice">

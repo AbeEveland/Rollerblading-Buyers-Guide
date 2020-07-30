@@ -5,6 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Rollerblading_Buyers_Guide.Models;
 using rollerblading_buyers_guide.Models;
 
@@ -28,6 +35,8 @@ namespace Rollerblading_Buyers_Guide.Controllers
 
 
         [HttpPost]
+        // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
         public async Task<ActionResult<User>> PostUser(User user)
         {
             // Indicate to the database context we want to add this new record
@@ -117,7 +126,11 @@ namespace Rollerblading_Buyers_Guide.Controllers
         {
             return _context.Users.Any(users => users.Id == id);
         }
-
+        private int GetCurrentUserId()
+        {
+            // Get the User Id from the claim and then parse it as an integer.
+            return int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id").Value);
+        }
 
 
     }

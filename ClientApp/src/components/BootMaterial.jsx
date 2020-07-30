@@ -6,7 +6,7 @@ import { NavBar } from './NavBar'
 const BootMaterial = () => {
   return (
     <>
-      <div className="xxxp">
+      <div className="s">
         <li>
           <a className="" href="/SkillLevel">
             {' '}
@@ -36,7 +36,7 @@ const BootMaterial = () => {
           </a>
         </li>
       </div>
-      <div className="thingsToConsiderpractice">
+      <div className="q">
         <h1>Boots</h1>
         <p>
           The three main boot types are soft boots, molded plastic and
@@ -54,6 +54,17 @@ const BootMaterial = () => {
         src="https://www.powerslide.com/bilder/_custom/kategorien/race-boots_03.jpg"
         alt=""
       />
+      <img
+        className="userfeaturesimagetwo"
+        src="https://www.powerslide.com/bilder/_custom/kategorien/pheme_quadpic.jpg"
+        alt=""
+      />
+      <img
+        className="userfeaturesimagetwo"
+        src="https://www.powerslide.com/bilder/_custom/kategorien/pheme_widepic.jpg"
+        alt=""
+      />
+
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>

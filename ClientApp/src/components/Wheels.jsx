@@ -6,7 +6,7 @@ import { NavBar } from './NavBar'
 const Wheels = () => {
   return (
     <>
-      <div className="xxxp">
+      <div className="s">
         <li>
           <a className="" href="/SkillLevel">
             {' '}
@@ -32,7 +32,7 @@ const Wheels = () => {
           </a>
         </li>
       </div>
-      <div className="thingsToConsiderpractice">
+      <div className="q">
         <h1>Wheel Size</h1>
         <p>
           Wheel size has traditionally been closely tied with speed,
@@ -59,6 +59,16 @@ const Wheels = () => {
       <img
         className="userfeaturesimage"
         src="https://www.powerslide.com/bilder/_custom/kategorien/wheels_800_02.jpg"
+        alt=""
+      />
+      <img
+        className="userfeaturesimagetwo"
+        src="https://www.powerslide.com/bilder/_custom/kategorien/psweb_urban_category2.jpg"
+        alt=""
+      />
+      <img
+        className="userfeaturesimagetwo"
+        src="https://www.powerslide.com/bilder/_custom/kategorien/psweb_urban_category1.jpg"
         alt=""
       />
       <Switch>

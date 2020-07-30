@@ -49,7 +49,37 @@ const RecommendedSkates = () => {
           ))}
         </div>
       )} */}
-      <main className="thingsToConsiderpractice">
+      <div className="s">
+        <li className="">
+          <a className=" " href="/ThingsToConsider">
+            {' '}
+            Things To Consider
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/AddRollerblades">
+            {' '}
+            Add
+          </a>
+        </li>
+
+        <li className="">
+          <a className="" href="/ShowRollerblades">
+            {' '}
+            Your Blades
+          </a>
+        </li>
+        <li className="">
+          <a className=" " href="/ShowUsers">
+            {' '}
+            Users
+          </a>
+        </li>
+      </div>
+      <main className="">
+        <div className="skatesheader">
+          <h1>Rollerblades</h1>
+        </div>
         <Switch>
           <Route exact path="/RecommendedSkates">
             <Rollerblades activeFilter={activeFilter} />

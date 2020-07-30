@@ -10,7 +10,7 @@ code {
 }
 
 body {
-  background: white;
+  background: rgb(201, 82, 82);
   background-color: white;
 }
 
@@ -19,7 +19,15 @@ body {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-
+.skatesheader {
+  font-family: copperplate;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  h1 {
+    font-size: 55px;
+  }
+}
 .homePageHeader {
   display: flex;
   flex-direction: row;
@@ -547,39 +555,282 @@ nav img {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background: white;
-}
-.xxxp li {
-  font-size: 10px;
   text-align: center;
-  color: black;
-  padding-bottom: 30px;
+  max-width: 1000px;
+  margin: auto;
 }
-.xxxp a {
+.qskill {
+  text-align: center;
+  box-shadow: 4px 4px 4px grey;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  padding-top: 30px;
+
+  font-family: 'copperplate';
+  font-size: 55px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
+  font-family: 'copperplate';
+  width: 80%;
+  max-width: 800px;
+
+  line-height: 1.846;
+  //   /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  h1 {
+    padding-bottom: 30px;
+    font-size: 70px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+}
+.s {
+  display: flex;
+
+  justify-content: space-evenly;
+  max-width: 1100px;
+  margin: auto;
+  font-family: 'copperplate';
+
   font-size: 15px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
+  font-family: 'copperplate';
+  list-style: none;
+  line-height: 1.846;
+  //   /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
+  //   display: flex;
+  padding-bottom: 30px;
+  //   justify-content: center;
+  a {
+    color: #1d1d1d;
+    padding-bottom: 20px;
+  }
+  li {
+    padding-bottom: 0px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 900px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+.sadd {
+  display: flex;
+
+  justify-content: space-evenly;
+  max-width: 1100px;
+  margin: auto;
+  font-family: 'copperplate';
+
+  font-size: 15px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
+  font-family: 'copperplate';
+  list-style: none;
+  line-height: 1.846;
+  //   /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
+  //   display: flex;
+  padding-bottom: 30px;
+  //   justify-content: center;
+  max-width: 1000px;
+  a {
+    color: #1d1d1d;
+    padding-bottom: 20px;
+  }
+  li {
+    padding-bottom: 0px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 900px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+.q {
   text-align: center;
+
+  font-family: 'copperplate';
+  font-size: 55px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
+  font-family: 'copperplate';
+  width: 80%;
+  max-width: 1000px;
+
+  line-height: 1.846;
+  //   /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
   text-align: center;
-  font-size: 14px;
+  margin: auto;
+  justify-content: center;
+  h1 {
+    padding-bottom: 10px;
+    font-size: 70px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+}
+.quser {
+  text-align: center;
+  box-shadow: 4px 4px 4px rgb(211, 209, 209);
+  font-family: 'copperplate';
+  font-size: 55px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
+  font-family: 'copperplate';
+  max-width: 1000px;
+
+  line-height: 1.846;
+  //   /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  h1 {
+    padding-bottom: 10px;
+    font-size: 70px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+}
+.sskill {
+  display: flex;
+
+  justify-content: space-evenly;
+  max-width: 1100px;
+  margin: auto;
+  font-family: 'copperplate';
+
+  font-size: 15px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
+  font-family: 'copperplate';
+  list-style: none;
+  line-height: 1.846;
+  //   /* font-family: Open Sans,sans-serif; */
+  color: #1d1d1d;
+  letter-spacing: 1px;
+  //   display: flex;
+  padding-bottom: 30px;
+  //   justify-content: center;
+  a {
+    color: #1d1d1d;
+    padding-bottom: 20px;
+  }
+  li {
+    padding-bottom: 20px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 700px;
+    text-align: center;
+  }
+}
+.thingsToConsiderpractice {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+}
+// .xxxp li {
+//   font-size: 10px;
+//   text-align: center;
+//   color: black;
+//   padding-bottom: 30px;
+//   display: flex;
+//   justify-content: center;
+// }
+.xxxp a {
+  padding-top: 15px;
+  padding: 50px;
+  padding-top: 15px;
+
+  font-size: 15px;
+  //   text-align: center;
+  //   text-align: center;
+  //   font-size: 14px;
   font-family: 'copperplate';
 
   line-height: 1.846;
-  /* font-family: Open Sans,sans-serif; */
+  //   /* font-family: Open Sans,sans-serif; */
   color: #1d1d1d;
   letter-spacing: 1px;
+  //   display: flex;
+  //   justify-content: center;
+  padding-top: 10px;
 }
 .userfeaturesimage {
   width: 100vw;
   padding-top: 30px;
 }
 .userfeaturesimageall {
-  width: 70vw;
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  border: 1px solid blue;
+  width: 100%;
+  // display: grid;
+  // border: 1px solid red;
+  // flex-direction: row; // grid-row-start: 1;
+  // grid-row-start: 2;
 }
+* {
+  box-sizing: border-box;
+}
+.description {
+  font-size: 12px;
+  text-align: center;
+  font-family: copperplate;
+  color: white;
+  font-size: 5px;
+}
+.description:hover {
+  font-size: 12px;
+  color: black;
+  font-style: none;
+  font-style: none;
+}
+
+.userfeaturesimagealluser {
+  width: 100px;
+  border-radius: 4px;
+  background-color: black;
+}
+
 .userfeatures {
   float: left;
   color: whitesmoke;
@@ -787,9 +1038,11 @@ h3 {
 .navbuttons {
   font-size: 11px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-family: optima;
   color: rgb(112, 109, 109);
+  justify-content: space-evenly;
+  padding: 5px;
 }
 
 .thingsToConsider form {
@@ -911,12 +1164,79 @@ form {
 .navbar {
   background-color: whitesmoke;
 }
-.thingsToConsiderpracticepp {
+.singlerollerbladefromlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  .recommendedskatesitem {
+    border-radius: 10px;
+    width: 400px;
+    margin: 16px;
+    padding: 8px;
+    box-shadow: 4px 4px 4px rgb(145, 145, 145);
+    text-align: center;
+    font-family: copperplate;
+    li {
+      padding: 0px;
+    }
+    .thingsToConsiderpracticepp {
+      h1 {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+        color: black;
+        text-align: center;
+      }
+      li {
+        color: black;
+        list-style: none;
+        font-size: 14px;
+        font-family: copperplate;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.recommendedskatesitemuser {
+  border-radius: 5px;
+  padding: 8px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: auto;
-  background: white;
+  margin: 16px;
+  box-shadow: 4px 4px 4px rgb(145, 145, 145);
+  .thingsToConsiderpracticeppuser {
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    h1 {
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      color: black;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    li {
+      color: rgb(66, 66, 66);
+      list-style: none;
+      font-size: 14px;
+      font-family: copperplate;
+      text-align: center;
+      padding-top: 5px;
+    }
+  }
+}
+
+.pics {
+  color: black;
+  list-style: none;
+  font-size: 14px;
+  font-family: copperplate;
+  text-align: center;
 }
 .UsersP {
   display: flex;
@@ -936,19 +1256,37 @@ form {
   padding-bottom: 10px;
   font-weight: 500;
 }
-.thingsToConsiderpracticepp img {
-  font-size: 20px;
+// .thingsToConsiderpracticepp img {
+//   font-size: 20px;
+//   font-family: 'copperplate';
+//   display: flex;
+//   justify-content: center;
+//   margin: auto;
+//   padding-top: 0px;
+//   padding-bottom: 10px;
+
+//   font-weight: 500;
+//   border: none;
+// }
+
+.thingsToConsiderpractice h1 {
+  font-size: 40px;
   font-family: 'copperplate';
   display: flex;
   justify-content: center;
   margin: auto;
   padding-top: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-weight: 500;
-  border: none;
 }
-.thingsToConsiderpractice h1 {
-  font-size: 40px;
+.thingsToConsiderpractice li {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.thingsToConsiderpractice h2 {
+  font-size: 30px;
   font-family: 'copperplate';
   display: flex;
   justify-content: center;
@@ -994,7 +1332,16 @@ form {
   margin: auto;
   padding-top: 5px;
 }
-
+.Borderbottomfeaturess {
+  // border-bottom: 0.1px solid rgb(150, 150, 150);
+  box-shadow: 0.1px 1.8px 0.1px rgb(153, 153, 153);
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 5px;
+  margin-bottom: 8px;
+}
 .thingsToConsiderpracticep p {
   width: 75%;
   display: flex;
@@ -1029,17 +1376,18 @@ form {
   justify-content: center;
   margin: auto;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   padding-bottom: 20px;
   padding-top: 20px;
   line-height: 1.846;
   /* font-family: Open Sans,sans-serif; */
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: copperplate;
   font-size: 12px;
   color: #1d1d1d;
   letter-spacing: 1px;
+  max-width: 800px;
 }
 .navbar img {
   width: 150px;
@@ -1056,8 +1404,164 @@ form {
   position: relative;
   right: 40px;
 }
+.dropdown {
+  color: rgb(54, 54, 54);
+  display: flex;
+  flex-direction: column;
+  font-family: copperplate;
+  border: none;
+  padding: 10px;
+  width: 20vw;
+}
+.dropdownp {
+  font-family: copperplate;
+}
+.form-group {
+  font-family: copperplate;
+  margin: auto;
+}
+.card-header {
+  font-family: copperplate;
+  margin: auto;
+  background-color: white;
+}
+.card {
+  background-color: whitesmoke;
+  width: 80vw;
+}
+.btn {
+  margin-top: 15px;
+}
+.thingsToConsiderpracticen {
+  color: #1d1d1d;
+  display: flex;
+  flex-direction: column;
+}
+.thingsToConsiderpracticen h1 {
+  font-size: 55px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  font-weight: 500;
+}
+.thingsToConsiderpracticen h2 {
+  font-size: 30px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-weight: 500;
+}
+.thingsToConsiderpracticen p {
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+  font-family: copperplate;
+  // padding-bottom: 8px;
+  // padding-top: 8px;
+  line-height: 1.846;
+  /* font-family: Open Sans,sans-serif; */
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #1d1d1d;
+  text-align: center;
+}
+.thingsToConsiderpracticen li {
+  color: rgb(49, 49, 49);
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: copperplate;
+  text-align: center;
+  flex-direction: row;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  font-size: 14px;
+  font-family: copperplate;
+  flex-direction: row;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  li {
+    list-style: none;
+  }
+}
+.thingsToConsiderpractice p {
+  font-size: 13px;
+  font-family: 'copperplate';
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: black;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.footer {
+  color: black;
+  background-color: black;
+  height: 80px;
+}
+.card {
+  max-width: 800px;
+  border: none;
+  box-shadow: 4px 4px 4px grey;
+}
+@media screen and (max-width: 779px) {
+  .userfeaturesimage {
+    width: 98vw;
+    padding-top: 30px;
+  }
+  .userfeaturesimagetwo {
+    display: none;
+  }
+}
 
-@media screen and (min-width: 680px) {
-  body {
+@media screen and (min-width: 780px) {
+  .navbar img {
+    position: relative;
+    left: 140px;
+  }
+  .zzz {
+    p {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+  .fleximage {
+    display: flex;
+
+    p {
+      height: 60vh;
+      padding-top: 30px;
+      width: 33vw;
+      margin-top: 30px;
+      text-align: center;
+      color: white;
+      line-height: 5em;
+    }
+  }
+  .userfeaturesimage {
+    width: 33vw;
+    padding-top: 30px;
+    height: 60vh;
+  }
+  .userfeaturesimagetwo {
+    width: 33vw;
+    padding-top: 30px;
+    height: 60vh;
   }
 }

@@ -70,12 +70,12 @@ export function NavBar(props) {
         <div className="navbuttons">
           {isLoggedIn() || (
             <Link className="navbuttons" to="/SignIn">
-              Sign in
+              SignIn
             </Link>
           )}
           {isLoggedIn() || (
             <Link className="navbuttons" to="/SignUp">
-              Sign up
+              SignUp
             </Link>
           )}
           <Link className="navbuttons" to="/">
@@ -84,7 +84,7 @@ export function NavBar(props) {
           {isLoggedIn() && (
             <Link className="navbuttons" onClick={handleLogout} to="/">
               {' '}
-              Sign Out
+              SignOut
             </Link>
           )}
         </div>
