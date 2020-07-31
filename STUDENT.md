@@ -34,7 +34,7 @@ Otherwise do the following _ONCE_ before using the steps above.
 - `heroku apps:create NAMEOFAPP` - NOTE: replace `NAMEOFAPP` with something that is unique to your project.
 - `heroku buildpacks:add heroku/nodejs`
 - `heroku buildpacks:add suncoast-devs/dotnetcore-buildpack`
-- `git push heroku master`
+- `**git push heroku master**`
 
 ## To open your deployed application
 
